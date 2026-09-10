@@ -143,3 +143,45 @@ export const sendMedia = (req: Request, res: Response) => {
     res.status(500).json({ error: 'internal_error' });
   }
 };
+
+const getBase64Schema = z.object({
+  message: z.object({
+    key: z.object({
+      id: z.string()
+    })
+  }),
+  convertToMp4: z.boolean().optional()
+});
+
+export const getBase64FromMediaMessage = (req: Request, res: Response) => {
+  const result = getBase64Schema.safeParse(req.body);
+  if (!result.success) {
+    return res.status(400).json({ error: 'bad_request', message: 'Invalid payload' });
+  }
+
+  const messageId = result.data.message.key.id;
+
+  const msg = db.prepare('SELECT media_id FROM messages WHERE id = ?').get(messageId) as { media_id: string | null } | undefined;
+  if (!msg || !msg.media_id) {
+    return res.status(200).json({ base64: "", mimetype: "" });
+  }
+
+  const media = db.prepare('SELECT path, mimetype FROM media WHERE id = ?').get(msg.media_id) as { path: string, mimetype: string } | undefined;
+  
+  if (!media) {
+    return res.status(200).json({ base64: "", mimetype: "" });
+  }
+
+  import('fs').then(fs => {
+    if (!fs.existsSync(media.path)) {
+      return res.status(200).json({ base64: "", mimetype: "" });
+    }
+    const data = fs.readFileSync(media.path);
+    res.status(200).json({
+      base64: data.toString('base64'),
+      mimetype: media.mimetype
+    });
+  }).catch(() => {
+    res.status(200).json({ base64: "", mimetype: "" });
+  });
+};

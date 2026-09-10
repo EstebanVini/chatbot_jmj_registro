@@ -5,6 +5,7 @@ import cors from 'cors';
 import { config } from './config';
 import appRoutes from './routes/app';
 import evolutionRoutes from './routes/evolution';
+import { startMediaCleanupJob } from './media';
 
 const app = express();
 
@@ -24,6 +25,8 @@ app.use('/api', appRoutes);
 // Evolution routes (consumed by n8n)
 app.use('/message', evolutionRoutes);
 app.use('/chat', evolutionRoutes);
+
+startMediaCleanupJob();
 
 const server = app.listen(config.PORT, () => {
   console.log(`🚀 Server running on port ${config.PORT}`);

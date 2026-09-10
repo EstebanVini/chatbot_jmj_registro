@@ -6,6 +6,7 @@ import multer from 'multer';
 import { config } from './config';
 import fs from 'fs';
 import path from 'path';
+import { sendWebhook } from './outbound';
 
 // Multer config
 const storage = multer.diskStorage({
@@ -111,7 +112,15 @@ export const postMessage = (req: Request, res: Response) => {
 
     res.status(202).json(msgObj);
 
-    // TODO: Send webhook to n8n (Phase 5)
+    // Call webhook
+    const emailObj = db.prepare('SELECT email FROM sessions WHERE id = ?').get(sessionId) as { email: string };
+    sendWebhook({
+      sessionId,
+      messageId,
+      email: emailObj.email,
+      text,
+      kind: kind as 'texto' | 'archivo'
+    });
 
   } catch (err) {
     db.exec('ROLLBACK');

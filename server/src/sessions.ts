@@ -2,6 +2,8 @@ import { Request, Response } from 'express';
 import { z } from 'zod';
 import { db } from './db';
 import crypto from 'crypto';
+import { sendWebhook } from './outbound';
+import { config } from './config';
 
 const sessionSchema = z.object({
   email: z.string().email().transform((val) => val.trim().toLowerCase()),
@@ -33,7 +35,14 @@ export const createSession = (req: Request, res: Response) => {
     path: '/',
   });
 
-  // TODO: Trigger activation phrase webhook (Phase 5)
+  const actMessageId = crypto.randomUUID();
+  sendWebhook({
+    sessionId,
+    messageId: actMessageId,
+    email,
+    kind: 'texto',
+    text: config.ACTIVATION_PHRASE
+  });
 
   res.status(201).json({
     sessionId,
@@ -108,7 +117,14 @@ export const createNewSession = (req: Request, res: Response) => {
     path: '/',
   });
 
-  // TODO: Trigger activation phrase webhook (Phase 5)
+  const actMessageId = crypto.randomUUID();
+  sendWebhook({
+    sessionId,
+    messageId: actMessageId,
+    email,
+    kind: 'texto',
+    text: config.ACTIVATION_PHRASE
+  });
 
   res.status(201).json({
     sessionId,
