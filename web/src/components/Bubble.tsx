@@ -13,11 +13,11 @@ export function Bubble({ message }: BubbleProps) {
   // Simple render logic for files
   const renderMedia = () => {
     if (isImage) {
-      const src = message.media_url || `/media/${message.media_id}`;
+      const src = message.media_url || `/api/media/${message.media_id}`;
       return <img src={src} alt="Adjunto" className="bubble-image" onClick={() => window.open(src, '_blank')} />;
     }
     if (isPdf) {
-      const src = message.media_url || `/media/${message.media_id}`;
+      const src = message.media_url || `/api/media/${message.media_id}`;
       return (
         <a href={src} target="_blank" rel="noreferrer" className="bubble-pdf">
           📄 Documento PDF

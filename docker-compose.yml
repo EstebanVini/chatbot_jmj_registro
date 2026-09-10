@@ -1,0 +1,32 @@
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: jmj_server
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./server/.env
+    environment:
+      - DB_PATH=/app/data/portal.db
+      - MEDIA_DIR=/app/media
+    volumes:
+      - server_data:/app/data
+      - media_data:/app/media
+    restart: unless-stopped
+
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    container_name: jmj_web
+    ports:
+      - "80:80"
+    depends_on:
+      - server
+    restart: unless-stopped
+
+volumes:
+  server_data:
+  media_data:

@@ -11,6 +11,28 @@
   --font-title: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
 }
 
+:root[data-theme="dark"] {
+  --tinta:      #F1F3F2;
+  --papel:      #121816;
+  --celadon:    #2C3B35;
+  --jade:       #4CAF9E;
+  --jade-suave: #1A2823;
+  --bermellon:  #E56B55;
+  --niebla:     #A0AEA9;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --tinta:      #F1F3F2;
+    --papel:      #121816;
+    --celadon:    #2C3B35;
+    --jade:       #4CAF9E;
+    --jade-suave: #1A2823;
+    --bermellon:  #E56B55;
+    --niebla:     #A0AEA9;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

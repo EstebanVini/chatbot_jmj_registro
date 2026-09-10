@@ -1,0 +1,20 @@
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--niebla);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--tinta);
+  transition: background 0.3s, transform 0.2s;
+  padding: 0;
+}
+
+.theme-toggle:hover {
+  background: var(--celadon);
+  transform: scale(1.05);
+}

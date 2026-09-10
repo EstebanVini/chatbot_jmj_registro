@@ -4,6 +4,7 @@ import { Bubble } from './Bubble';
 import { Composer } from './Composer';
 import { QuickReplies } from './QuickReplies';
 import { getQuickReplies } from '../quickReplies';
+import { ThemeToggle } from './ThemeToggle';
 import './Chat.css';
 
 interface ChatProps {
@@ -213,6 +214,7 @@ export function Chat({ session, onLogout, onNewSession }: ChatProps) {
           <span className="email">{session.email}</span>
         </div>
         <div className="header-actions">
+          <ThemeToggle />
           <button className="menu-btn" onClick={handleLogout}>⏻</button>
         </div>
       </header>

@@ -12,6 +12,12 @@
   background-color: var(--papel);
 }
 
+.gate-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 .title {
   font-family: var(--font-title);
   font-weight: 700;
@@ -45,7 +51,8 @@ input[type="email"] {
   border: 1px solid var(--niebla);
   border-radius: 10px;
   outline: none;
-  background: white;
+  background: transparent;
+  color: var(--tinta);
 }
 
 input[type="email"]:focus {
@@ -60,7 +67,7 @@ button {
   border: none;
   border-radius: 10px;
   background-color: var(--jade);
-  color: white;
+  color: var(--papel);
   cursor: pointer;
   transition: opacity 0.2s;
   min-height: 44px;

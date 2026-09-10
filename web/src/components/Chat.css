@@ -44,6 +44,12 @@
   color: var(--niebla);
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .menu-btn {
   background: none;
   border: none;
@@ -96,7 +102,7 @@
   bottom: 90px;
   right: 16px;
   background-color: var(--jade);
-  color: white;
+  color: var(--papel);
   border: none;
   border-radius: 20px;
   padding: 8px 16px;
@@ -132,7 +138,7 @@
 
 .action-btn.primary {
   background-color: var(--jade);
-  color: white;
+  color: var(--papel);
 }
 
 .action-btn.secondary {

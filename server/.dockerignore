@@ -1,0 +1,8 @@
+node_modules
+dist
+.env
+.git
+portal.db
+portal.db-shm
+portal.db-wal
+media

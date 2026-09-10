@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { createSession } from '../api';
+import { ThemeToggle } from './ThemeToggle';
 import './EmailGate.css';
 
 interface EmailGateProps {
@@ -31,10 +32,13 @@ export function EmailGate({ onSessionCreated }: EmailGateProps) {
   return (
     <div className="email-gate">
       <div className="email-gate-card">
-        <h1 className="title">
-          Registro de peregrinos<br />
-          JMJ Corea 2027
-        </h1>
+        <div className="gate-header">
+          <h1 className="title">
+            Registro de peregrinos<br />
+            JMJ Corea 2027
+          </h1>
+          <ThemeToggle />
+        </div>
         <p className="subtitle">Escriba su correo para comenzar.</p>
         
         <form onSubmit={handleSubmit} className="form">
