@@ -33,10 +33,13 @@ export function EmailGate({ onSessionCreated }: EmailGateProps) {
     <div className="email-gate">
       <div className="email-gate-card">
         <div className="gate-header">
-          <h1 className="title">
-            Registro de peregrinos<br />
-            JMJ Corea 2027
-          </h1>
+          <div className="title-wrapper">
+            <img src="/WYD_Seoul_2027_Official_logo.png" alt="Logo JMJ" className="gate-logo" />
+            <h1 className="title">
+              Registro de peregrinos<br />
+              JMJ Corea 2027
+            </h1>
+          </div>
           <ThemeToggle />
         </div>
         <p className="subtitle">Escriba su correo para comenzar.</p>

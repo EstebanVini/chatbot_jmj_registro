@@ -34,7 +34,7 @@ function App() {
     return <EmailGate onSessionCreated={checkSession} />;
   }
 
-  return <Chat session={session} onLogout={checkSession} onNewSession={checkSession} />;
+  return <Chat key={session.sessionId} session={session} onLogout={checkSession} onNewSession={checkSession} />;
 }
 
 export default App;

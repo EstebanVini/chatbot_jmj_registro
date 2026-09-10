@@ -33,13 +33,29 @@
   top: 0;
 }
 
-.header-info h2 {
+.header-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-logo {
+  height: 40px;
+  width: auto;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-text h2 {
   font-size: 17px;
   font-weight: 700;
   margin: 0;
 }
 
-.header-info .email {
+.header-text .email {
   font-size: 13px;
   color: var(--niebla);
 }

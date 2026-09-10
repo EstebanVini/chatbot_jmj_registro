@@ -16,6 +16,18 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.gate-logo {
+  height: 60px;
+  width: auto;
 }
 
 .title {
@@ -24,7 +36,6 @@
   font-size: 40px;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  margin-bottom: 24px;
 }
 
 @media (min-width: 768px) {

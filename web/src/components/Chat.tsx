@@ -197,6 +197,17 @@ export function Chat({ session, onLogout, onNewSession }: ChatProps) {
     }
   };
 
+  const getFormUrl = () => {
+    for (let i = messages.length - 1; i >= 0; i--) {
+      const msg = messages[i];
+      if (msg.author === 'bot' && msg.text) {
+        const match = msg.text.match(/(https:\/\/[^\s]+)/);
+        if (match) return match[1];
+      }
+    }
+    return 'https://registro.eviniegra.software';
+  };
+
   const isCompleted = status === 'completada' || status === 'cerrada';
   const disableComposer = isCompleted || (pendingBotReply && !typing && quickReplies.length === 0);
   
@@ -210,8 +221,11 @@ export function Chat({ session, onLogout, onNewSession }: ChatProps) {
       
       <header className="chat-header">
         <div className="header-info">
-          <h2>JMJ Corea 2027</h2>
-          <span className="email">{session.email}</span>
+          <img src="/WYD_Seoul_2027_Official_logo.png" alt="Logo JMJ" className="header-logo" />
+          <div className="header-text">
+            <h2>JMJ Corea 2027</h2>
+            <span className="email">{session.email}</span>
+          </div>
         </div>
         <div className="header-actions">
           <ThemeToggle />
@@ -246,7 +260,7 @@ export function Chat({ session, onLogout, onNewSession }: ChatProps) {
       <div className="chat-footer">
         {isCompleted ? (
           <div className="completed-actions">
-            <button className="action-btn primary" onClick={() => window.open('https://registro.eviniegra.software', '_blank')}>
+            <button className="action-btn primary" onClick={() => window.open(getFormUrl(), '_blank')}>
               Abrir mi formulario
             </button>
             <button className="action-btn secondary" onClick={handleNewPerson}>
