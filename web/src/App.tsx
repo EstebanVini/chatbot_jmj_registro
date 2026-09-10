@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { fetchSession, Session } from './api';
+import { fetchSession, type Session } from './api';
 import { EmailGate } from './components/EmailGate';
 import { Chat } from './components/Chat';
 

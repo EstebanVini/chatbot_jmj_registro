@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useMemo } from 'react';
-import { Session, Message, fetchSession, closeSession, sendMessageText, sendMessageMedia, subscribeToStream, newSession } from '../api';
+import { type Session, type Message, fetchSession, closeSession, sendMessageText, sendMessageMedia, subscribeToStream, newSession } from '../api';
 import { Bubble } from './Bubble';
 import { Composer } from './Composer';
 import { QuickReplies } from './QuickReplies';
@@ -23,8 +23,8 @@ export function Chat({ session, onLogout, onNewSession }: ChatProps) {
   const [autoScroll, setAutoScroll] = useState(true);
   
   // Ref for timer
-  const typingTimerRef = useRef<number>();
-  const warningTimerRef = useRef<number>();
+  const typingTimerRef = useRef<number | undefined>(undefined);
+  const warningTimerRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     fetchSession().then((res) => {

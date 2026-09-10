@@ -1,4 +1,4 @@
-import { Message } from '../api';
+import type { Message } from '../api';
 import './Bubble.css';
 
 interface BubbleProps {
