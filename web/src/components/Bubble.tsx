@@ -1,4 +1,5 @@
 import type { Message } from '../api';
+import { PhotoView } from 'react-photo-view';
 import './Bubble.css';
 
 interface BubbleProps {
@@ -14,7 +15,11 @@ export function Bubble({ message }: BubbleProps) {
   const renderMedia = () => {
     if (isImage) {
       const src = message.media_url || `/api/media/${message.media_id}`;
-      return <img src={src} alt="Adjunto" className="bubble-image" onClick={() => window.open(src, '_blank')} />;
+      return (
+        <PhotoView src={src}>
+          <img src={src} alt="Adjunto" className="bubble-image" style={{ cursor: 'pointer' }} />
+        </PhotoView>
+      );
     }
     if (isPdf) {
       const src = message.media_url || `/api/media/${message.media_id}`;

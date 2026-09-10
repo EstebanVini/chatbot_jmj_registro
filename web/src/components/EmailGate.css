@@ -26,7 +26,7 @@
 }
 
 .gate-logo {
-  height: 60px;
+  height: 90px;
   width: auto;
 }
 
@@ -41,6 +41,9 @@
 @media (min-width: 768px) {
   .title {
     font-size: 56px;
+  }
+  .gate-logo {
+    height: 120px;
   }
 }
 

@@ -5,6 +5,7 @@ import { Composer } from './Composer';
 import { QuickReplies } from './QuickReplies';
 import { getQuickReplies } from '../quickReplies';
 import { ThemeToggle } from './ThemeToggle';
+import { PhotoProvider } from 'react-photo-view';
 import './Chat.css';
 
 interface ChatProps {
@@ -234,21 +235,23 @@ export function Chat({ session, onLogout, onNewSession }: ChatProps) {
       </header>
 
       <div className="chat-scroll" ref={scrollContainerRef} onScroll={handleScroll}>
-        <div className="chat-history">
-          {messages.map((m) => (
-            <Bubble key={m.id} message={m} />
-          ))}
-          {typing && (
-            <div className="bubble-wrapper bot">
-              <div className="bubble typing-bubble">
-                <span className="dot"></span>
-                <span className="dot"></span>
-                <span className="dot"></span>
+        <PhotoProvider>
+          <div className="chat-history">
+            {messages.map((m) => (
+              <Bubble key={m.id} message={m} />
+            ))}
+            {typing && (
+              <div className="bubble-wrapper bot">
+                <div className="bubble typing-bubble">
+                  <span className="dot"></span>
+                  <span className="dot"></span>
+                  <span className="dot"></span>
+                </div>
               </div>
-            </div>
-          )}
-          <div ref={messagesEndRef} />
-        </div>
+            )}
+            <div ref={messagesEndRef} />
+          </div>
+        </PhotoProvider>
       </div>
 
       {!autoScroll && (
