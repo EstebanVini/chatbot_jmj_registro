@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import cors from 'cors';
 import { config } from './config';
 import appRoutes from './routes/app';
+import evolutionRoutes from './routes/evolution';
 
 const app = express();
 
@@ -19,6 +20,10 @@ app.get('/health', (req, res) => {
 
 // App routes (consumed by browser)
 app.use('/api', appRoutes);
+
+// Evolution routes (consumed by n8n)
+app.use('/message', evolutionRoutes);
+app.use('/chat', evolutionRoutes);
 
 const server = app.listen(config.PORT, () => {
   console.log(`🚀 Server running on port ${config.PORT}`);
