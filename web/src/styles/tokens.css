@@ -1,0 +1,35 @@
+:root {
+  --tinta:      #16211E;
+  --papel:      #F1F3F2;
+  --celadon:    #D7E4DE;
+  --jade:       #1F5E52;
+  --jade-suave: #E8F0ED;
+  --bermellon:  #C8452F;
+  --niebla:     #7C8A85;
+
+  --font-body: 'Public Sans', system-ui, -apple-system, sans-serif;
+  --font-title: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--papel);
+  color: var(--tinta);
+  font-size: 17px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+}
+
+input, textarea {
+  font-family: inherit;
+}

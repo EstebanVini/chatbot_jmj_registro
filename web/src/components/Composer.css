@@ -1,0 +1,49 @@
+.composer-container {
+  display: flex;
+  align-items: flex-end;
+  background-color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--niebla);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.composer-container:focus-within {
+  border-color: var(--jade);
+}
+
+.attach-btn, .send-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--jade);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.attach-btn:disabled, .send-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.composer-textarea {
+  flex: 1;
+  border: none;
+  resize: none;
+  outline: none;
+  font-size: 17px;
+  padding: 10px 8px;
+  max-height: 96px;
+  background: transparent;
+  color: var(--tinta);
+  font-family: var(--font-body);
+}
+
+.composer-textarea::placeholder {
+  color: var(--niebla);
+}

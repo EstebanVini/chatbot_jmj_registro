@@ -1,0 +1,4517 @@
+{
+  "id": "vF7ZiCDmy8Kp31qZ",
+  "name": "Registro de Peregrinos \u2014 WhatsApp + OCR + Odoo",
+  "active": true,
+  "isArchived": false,
+  "versionId": "d7a6cf73-e948-404a-b1e9-42b368d1d635",
+  "activeVersionId": "ac6de2e9-5ef0-4e88-b249-3f2d5b6c6f72",
+  "triggerCount": 1,
+  "createdAt": "2026-09-09T15:45:26.198Z",
+  "updatedAt": "2026-09-09T23:29:48.211Z",
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": true,
+    "binaryMode": "separate"
+  },
+  "connections": {
+    "Evolution Webhook": {
+      "main": [
+        [
+          {
+            "node": "Set Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Config": {
+      "main": [
+        [
+          {
+            "node": "Normalize Evolution Event",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize Evolution Event": {
+      "main": [
+        [
+          {
+            "node": "Is Client Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Client Message": {
+      "main": [
+        [
+          {
+            "node": "Get Session",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Session": {
+      "main": [
+        [
+          {
+            "node": "Classify Route",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classify Route": {
+      "main": [
+        [
+          {
+            "node": "Route By Intent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route By Intent": {
+      "main": [
+        [
+          {
+            "node": "Send Passport Instructions",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Fetch Image Base64",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Build Registration Record",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Retry Photo Request",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Welcome Message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Build No Passport Step",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Passport Instructions": {
+      "main": [
+        [
+          {
+            "node": "Set State Awaiting Photo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Image Base64": {
+      "main": [
+        [
+          {
+            "node": "Convert Base64 To Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert Base64 To Image": {
+      "main": [
+        [
+          {
+            "node": "Extract Passport Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Passport Data": {
+      "main": [
+        [
+          {
+            "node": "Build Passport Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Passport Summary": {
+      "main": [
+        [
+          {
+            "node": "Is Passport Valid",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Passport Valid": {
+      "main": [
+        [
+          {
+            "node": "Save Passport Data",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Passport Read Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Passport Data": {
+      "main": [
+        [
+          {
+            "node": "Send Data For Confirmation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Passport Read Error": {
+      "main": [
+        [
+          {
+            "node": "Reset State To Awaiting Photo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Registration Record": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Create an item",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create an item": {
+      "main": [
+        [
+          {
+            "node": "Fetch Passport Image For Odoo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Passport Image For Odoo": {
+      "main": [
+        [
+          {
+            "node": "Has Passport Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Passport Image": {
+      "main": [
+        [
+          {
+            "node": "Create Passport Document",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Mark As Registered",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Passport Document": {
+      "main": [
+        [
+          {
+            "node": "Mark As Registered",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark As Registered": {
+      "main": [
+        [
+          {
+            "node": "Get Passenger Form Link",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Retry Photo Request": {
+      "main": [
+        [
+          {
+            "node": "Set State Retry Photo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Welcome Message": {
+      "main": [
+        [
+          {
+            "node": "Set State Awaiting Keyword",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build No Passport Step": {
+      "main": [
+        [
+          {
+            "node": "Save No Passport Progress",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save No Passport Progress": {
+      "main": [
+        [
+          {
+            "node": "Is No Passport Complete",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is No Passport Complete": {
+      "main": [
+        [
+          {
+            "node": "Append No Passport Row",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send No Passport Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append No Passport Row": {
+      "main": [
+        [
+          {
+            "node": "Create No Passport Item",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create No Passport Item": {
+      "main": [
+        [
+          {
+            "node": "Get No Passport Form Link",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get No Passport Form Link": {
+      "main": [
+        [
+          {
+            "node": "Send No Passport Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Passenger Form Link": {
+      "main": [
+        [
+          {
+            "node": "Send Registration Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "b2ae7bd7-28f1-4855-bab7-03960e0fa4fd",
+        "options": {
+          "responseCode": {
+            "values": {}
+          }
+        }
+      },
+      "id": "ba60ea1a-7482-441c-aad4-dd451c526999",
+      "name": "Evolution Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -1008,
+        544
+      ],
+      "webhookId": "b98e8eb0-4710-408e-b038-9f7538ab1d8e"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "cfg1",
+              "name": "evolutionUrl",
+              "value": "https://evolution.eviniegra.software",
+              "type": "string"
+            },
+            {
+              "id": "cfg2",
+              "name": "evolutionInstance",
+              "value": "={{ $json.body.instance }}",
+              "type": "string"
+            },
+            {
+              "id": "cfg3",
+              "name": "ocrUrl",
+              "value": "https://ocr.eviniegra.qzz.io",
+              "type": "string"
+            },
+            {
+              "id": "cfg4",
+              "name": "imagenEjemploUrl",
+              "value": "https://raw.githubusercontent.com/EstebanVini/ocr_api_gateway/refs/heads/main/Ej_Foto_pasaporte.jpg",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "782f8bfb-eb6f-4cca-845f-4e4ca402e0bd",
+      "name": "Set Config",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -800,
+        544
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const wh = $('Evolution Webhook').first().json;\nconst body = wh.body || wh;\nconst data = body.data || {};\nconst key = data.key || {};\nconst message = data.message || {};\nconst remoteJid = key.remoteJid || '';\nconst numero = remoteJid.split('@')[0].split(':')[0];\nconst esGrupo = remoteJid.indexOf('@g.us') !== -1;\nconst ext = message.extendedTextMessage || {};\nconst img = message.imageMessage || {};\nconst texto = message.conversation || ext.text || img.caption || '';\nconst hayImagen = !!message.imageMessage || data.messageType === 'imageMessage';\nconst tipo = hayImagen ? 'image' : (texto ? 'text' : 'otro');\nconst evento = String(body.event || '').toLowerCase().replace(/_/g, '.');\nconst procesable = evento === 'messages.upsert' && !key.fromMe && !esGrupo && remoteJid !== '' && tipo !== 'otro';\nreturn [{ json: { evento, instancia: body.instance || '', remoteJid, numero, esGrupo, fromMe: !!key.fromMe, messageId: key.id || '', pushName: data.pushName || '', email: data.email || '', texto, tipo, procesable } }];"
+      },
+      "id": "f4cafb25-28a1-4cf5-aeb2-c37e0e61502d",
+      "name": "Normalize Evolution Event",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -608,
+        544
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "proc",
+              "leftValue": "={{ $json.procesable }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "1f06cb2f-e68e-47ea-b722-8a2b6258f65b",
+      "name": "Is Client Message",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -192,
+        544
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "OEU5X89bpPWLhzNB",
+          "cachedResultName": "registro_peregrinos"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "remote_jid",
+              "keyValue": "={{ $json.remoteJid }}"
+            }
+          ]
+        },
+        "limit": 1,
+        "orderBy": true,
+        "orderByColumn": "updatedAt"
+      },
+      "id": "fd6f8175-e15e-4965-91b3-39168b799ff5",
+      "name": "Get Session",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        48,
+        544
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "jsCode": "const msg = $('Normalize Evolution Event').first().json;\nconst fila = $json || {};\nconst estado = fila.estado || 'NUEVO';\n\nconst norm = function (s) { return String(s || '').normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim(); };\nconst texto = norm(msg.texto);\nconst compacto = texto.replace(/ /g, '');\nconst esImagen = msg.tipo === 'image';\n\nconst FRASES_ACTIVACION = ['quiero registrarme para la jmj corea 2027', 'quiero registrarme para la jmj de corea 2027', 'quiero registrarme para corea 2027', 'quiero registrarme para la jmj', 'quiero registrarme para la jmj de seul 2027', 'quiero registrarme para la jmj seul 2027', 'quiero registrarme para la jmj 2027', 'quiero registrarme para seul 2027', 'quiero registrarme para la jmj de corea', 'quiero registrarme para la jmj de seul', 'quiero registrarme para corea', 'quiero registrarme para la jornada mundial de la juventud'];\nconst RE_ACTIVACION = /^quiero (?:registrarme|inscribirme|apuntarme|anotarme)\\s*(?:para|a|al|en)?\\s*(?:la|el|las|los)?\\s*(?:jmj|jornada mundial de la juventud|jornada mundial de juventud|corea|seul|seoul|peregrinacion)\\b/;\nconst esActivacion = FRASES_ACTIVACION.indexOf(texto) !== -1 || RE_ACTIVACION.test(texto);\n\nconst OPCIONES_PASAPORTE = ['pasaporte', 'conpasaporte', 'registroconpasaporte', 'registro'];\nconst OPCIONES_SIN_PASAPORTE = ['sinpasaporte', 'nopasaporte', 'notengopasaporte', 'registrosinpasaporte'];\n\nconst ESTADOS_SIN_PASAPORTE = ['SP_ESPERANDO_NOMBRE', 'SP_ESPERANDO_NACIMIENTO', 'SP_ESPERANDO_CURP', 'SP_ESPERANDO_SEXO'];\n\nconst MSG_BIENVENIDA = 'Para realizar su registro de peregrino responda con una de estas opciones:\\n\\n*Pasaporte* - si ya cuenta con su pasaporte y quiere registrarse con el.\\n*Sin pasaporte* - si aun no tiene pasaporte y quiere registrarse de todas formas.';\nconst MSG_INSTRUCCIONES = 'Favor de mandar foto de su pasaporte COMPLETA, que salgan todos los datos incluidos los datos de la parte inferior del pasaporte (MRZ)';\nconst MSG_REINTENTO = 'De acuerdo, no daremos esos datos por correctos.\\n\\n' + MSG_INSTRUCCIONES;\n\nlet route = 'ignore';\n\nif (esActivacion) {\n  route = 'welcome';\n} else if (esImagen) {\n  route = (estado === 'ESPERANDO_FOTO' || estado === 'ESPERANDO_CONFIRMACION') ? 'ocr' : 'ignore';\n} else if (estado !== 'NUEVO' && OPCIONES_SIN_PASAPORTE.indexOf(compacto) !== -1) {\n  route = 'sin_pasaporte';\n} else if (estado !== 'NUEVO' && OPCIONES_PASAPORTE.indexOf(compacto) !== -1) {\n  route = 'instructions';\n} else if (ESTADOS_SIN_PASAPORTE.indexOf(estado) !== -1) {\n  route = 'sin_pasaporte';\n} else if (estado === 'ESPERANDO_CONFIRMACION') {\n  route = (compacto === 'ok' || compacto === 'okay' || compacto === 'okey') ? 'confirm' : 'retry_photo';\n} else if (estado === 'ESPERANDO_FOTO') {\n  route = 'instructions';\n} else if (estado === 'ESPERANDO_PALABRA') {\n  route = 'welcome';\n}\n\nconst mensajes = { \n  welcome: MSG_BIENVENIDA, \n  instructions: MSG_INSTRUCCIONES, \n  retry_photo: MSG_REINTENTO, \n  confirm: '', \n  ocr: '', \n  sin_pasaporte: '', \n  ignore: '' \n};\n\nreturn [{ \n  json: Object.assign({}, msg, { \n    estadoActual: estado, \n    filaId: fila.id || null, \n    route, \n    mensaje: mensajes[route] \n  }) \n}];"
+      },
+      "id": "d73a2f11-4d16-4ffe-a189-32fe39fe2210",
+      "name": "Classify Route",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        256,
+        544
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "sw0",
+                    "leftValue": "={{ $json.route }}",
+                    "rightValue": "instructions",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Instrucciones"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "sw1",
+                    "leftValue": "={{ $json.route }}",
+                    "rightValue": "ocr",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Leer Pasaporte"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "sw2",
+                    "leftValue": "={{ $json.route }}",
+                    "rightValue": "confirm",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Confirmar OK"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "sw3",
+                    "leftValue": "={{ $json.route }}",
+                    "rightValue": "retry_photo",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Reintentar Foto"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "sw4",
+                    "leftValue": "={{ $json.route }}",
+                    "rightValue": "welcome",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Frase De Activacion"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "sw5",
+                    "leftValue": "={{ $json.route }}",
+                    "rightValue": "sin_pasaporte",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Sin Pasaporte"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "none"
+        }
+      },
+      "id": "798cf788-46fd-43f6-bd80-6a8473ed3f7e",
+      "name": "Route By Intent",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        512,
+        576
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $(\"Evolution Webhook\").item.json.body.server_url }}/message/sendMedia/{{ $(\"Set Config\").first().json.evolutionInstance }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $(\"Evolution Webhook\").item.json.body.apikey }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ number: $json.numero, mediatype: \"image\", mimetype: \"image/jpeg\", media: \"https://raw.githubusercontent.com/EstebanVini/ocr_api_gateway/refs/heads/main/Ej_Foto_pasaporte.jpg\", fileName: \"Ej_Foto_pasaporte.jpg\", caption: $json.mensaje, delay: 900 }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "ca453659-2461-4f6f-aaa9-b42bcd4096d5",
+      "name": "Send Passport Instructions",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        752,
+        -432
+      ],
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "OEU5X89bpPWLhzNB",
+          "cachedResultName": "registro_peregrinos"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "remote_jid",
+              "keyValue": "={{ $(\"Classify Route\").first().json.remoteJid }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "remote_jid": "={{ $(\"Classify Route\").first().json.remoteJid }}",
+            "estado": "ESPERANDO_FOTO",
+            "actualizado": "={{ $now.toISO() }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "78930a46-cf1c-4feb-96ee-a9d47e645522",
+      "name": "Set State Awaiting Photo",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        928,
+        -432
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $(\"Evolution Webhook\").item.json.body.server_url }}/chat/getBase64FromMediaMessage/{{ $(\"Set Config\").first().json.evolutionInstance }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $(\"Evolution Webhook\").item.json.body.apikey }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ message: { key: { id: $json.messageId } }, convertToMp4: false }) }}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "c6d23e52-01d2-467b-b562-d231d0068af9",
+      "name": "Fetch Image Base64",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        800,
+        48
+      ],
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "base64",
+        "options": {
+          "fileName": "pasaporte.jpg",
+          "mimeType": "={{ $json.mimetype || \"image/jpeg\" }}"
+        }
+      },
+      "id": "0e815ce9-50b4-43f4-b3b9-10f317e6beeb",
+      "name": "Convert Base64 To Image",
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        976,
+        48
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $(\"Set Config\").first().json.ocrUrl }}/api/v1/ocr",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "data"
+            },
+            {
+              "name": "language",
+              "value": "spa"
+            },
+            {
+              "name": "ocr_engine",
+              "value": "2"
+            },
+            {
+              "name": "detect_orientation",
+              "value": "true"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          },
+          "timeout": 180000
+        }
+      },
+      "id": "21d3c86f-f592-4e88-a435-9994c3cdced3",
+      "name": "Extract Passport Data",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1152,
+        48
+      ],
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "const ctx = $('Classify Route').first().json;\nconst full = $json || {};\nconst status = full.statusCode || 200;\nconst resp = full.body || full;\nconst fmt = function (iso) { if (!iso) { return '-'; } const p = String(iso).split('-'); return p.length === 3 ? (p[2] + '/' + p[1] + '/' + p[0]) : String(iso); };\nconst errores = { UNSUPPORTED_FILE_TYPE: 'El archivo enviado no es una imagen v\u00e1lida.', FILE_TOO_LARGE: 'La imagen pesa demasiado.', COMPRESSION_FAILED: 'No pudimos procesar la imagen por su tama\u00f1o.', PDF_PAGE_LIMIT_EXCEEDED: 'El documento tiene demasiadas p\u00e1ginas.', CORRUPT_OR_ENCRYPTED_FILE: 'El archivo est\u00e1 da\u00f1ado o protegido.', OCR_SPACE_AUTH_ERROR: 'El servicio de lectura no est\u00e1 disponible en este momento.', OCR_SPACE_ERROR: 'El servicio de lectura no pudo procesar la imagen.' };\nconst REPETIR = '\\n\\nPor favor env\u00ede de nuevo una foto de su pasaporte COMPLETA, bien iluminada y sin reflejos, que salgan todos los datos incluidos los de la parte inferior (MRZ).';\nconst mrz = (resp.passport || {}).mrz || null;\nlet ok = false;\nlet mensaje = '';\nlet datos = { nombre: '', apellidos: '', numero_pasaporte: '', nacionalidad: '', sexo: '', fecha_nacimiento: '', fecha_vencimiento: '', pais_emisor: '', numero_personal: '' };\nif (status >= 400 || resp.success === false) {\n  const code = ((resp.error || {}).code) || ('HTTP_' + status);\n  mensaje = 'No pudimos leer su pasaporte. ' + (errores[code] || 'Ocurri\u00f3 un problema al procesar la imagen.') + REPETIR;\n} else if (!mrz) {\n  mensaje = 'No pudimos detectar la zona MRZ (las dos l\u00edneas del pie de la p\u00e1gina de datos) de su pasaporte.' + REPETIR;\n} else if (mrz.checksum_valid !== true) {\n  mensaje = 'La zona MRZ de su pasaporte no se ley\u00f3 con claridad.' + REPETIR;\n} else {\n  ok = true;\n  datos = { nombre: mrz.given_names || '', apellidos: mrz.surname || '', numero_pasaporte: mrz.passport_number || '', nacionalidad: mrz.nationality || '', sexo: mrz.sex || '', fecha_nacimiento: mrz.date_of_birth || '', fecha_vencimiento: mrz.date_of_expiry || '', pais_emisor: mrz.issuing_country || '', numero_personal: mrz.personal_number || '' };\n  const aviso = (resp.passport || {}).matches_visible_text === false ? '\\n\\n_Revise con cuidado: algunos datos podr\u00edan no coincidir con el documento._' : '';\n  mensaje = 'Estos son los datos que le\u00edmos de su pasaporte:\\n\\n' +\n    '*Apellidos:* ' + datos.apellidos + '\\n' +\n    '*Nombre(s):* ' + datos.nombre + '\\n' +\n    '*No. de pasaporte:* ' + datos.numero_pasaporte + '\\n' +\n    '*Nacionalidad:* ' + datos.nacionalidad + '\\n' +\n    '*Sexo:* ' + datos.sexo + '\\n' +\n    '*Fecha de nacimiento:* ' + fmt(datos.fecha_nacimiento) + '\\n' +\n    '*Vence:* ' + fmt(datos.fecha_vencimiento) + aviso + '\\n\\n' +\n    'Si todos los datos son correctos responda con la palabra *OK* para completar su registro.\\n' +\n    'Si algo no es correcto, env\u00ede de nuevo una foto de su pasaporte.';\n}\nreturn [{ json: Object.assign({ ok: ok, mensaje: mensaje, numero: ctx.numero, remoteJid: ctx.remoteJid }, datos) }];"
+      },
+      "id": "32b7bb66-3023-4c85-9e6a-264f6fc40f6f",
+      "name": "Build Passport Summary",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1360,
+        48
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "okmrz",
+              "leftValue": "={{ $json.ok }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "f4b50c8e-1bdb-4d01-8989-402def85eb8b",
+      "name": "Is Passport Valid",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1552,
+        48
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "OEU5X89bpPWLhzNB",
+          "cachedResultName": "registro_peregrinos"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "remote_jid",
+              "keyValue": "={{ $json.remoteJid }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "remote_jid": "={{ $json.remoteJid }}",
+            "estado": "ESPERANDO_CONFIRMACION",
+            "nombre": "={{ $json.nombre }}",
+            "apellidos": "={{ $json.apellidos }}",
+            "numero_pasaporte": "={{ $json.numero_pasaporte }}",
+            "nacionalidad": "={{ $json.nacionalidad }}",
+            "sexo": "={{ $json.sexo }}",
+            "fecha_nacimiento": "={{ $json.fecha_nacimiento }}",
+            "fecha_vencimiento": "={{ $json.fecha_vencimiento }}",
+            "pais_emisor": "={{ $json.pais_emisor }}",
+            "numero_personal": "={{ $json.numero_personal }}",
+            "foto_message_id": "={{ $(\"Classify Route\").first().json.messageId }}",
+            "actualizado": "={{ $now.toISO() }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "80685bee-5ced-49a0-91c5-3e530bc63c4d",
+      "name": "Save Passport Data",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1776,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $(\"Evolution Webhook\").item.json.body.server_url }}/message/sendText/{{ $(\"Set Config\").first().json.evolutionInstance }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $(\"Evolution Webhook\").item.json.body.apikey }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ number: $(\"Build Passport Summary\").first().json.numero, text: $(\"Build Passport Summary\").first().json.mensaje, delay: 900 }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "23e2c510-c0e6-4adf-9ada-aa3135629473",
+      "name": "Send Data For Confirmation",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1952,
+        -80
+      ],
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $(\"Evolution Webhook\").item.json.body.server_url }}/message/sendText/{{ $(\"Set Config\").first().json.evolutionInstance }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $(\"Evolution Webhook\").item.json.body.apikey }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ number: $json.numero, text: $json.mensaje, delay: 900 }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "412826c5-1e97-406a-a718-08abcbcf3f30",
+      "name": "Send Passport Read Error",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1776,
+        96
+      ],
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "OEU5X89bpPWLhzNB",
+          "cachedResultName": "registro_peregrinos"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "remote_jid",
+              "keyValue": "={{ $(\"Classify Route\").first().json.remoteJid }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "remote_jid": "={{ $(\"Classify Route\").first().json.remoteJid }}",
+            "estado": "ESPERANDO_FOTO",
+            "actualizado": "={{ $now.toISO() }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "c84e1ffd-8215-4708-82d9-3a77e896a59a",
+      "name": "Reset State To Awaiting Photo",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1952,
+        96
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const ctx = $('Classify Route').first().json;\nconst fila = $('Get Session').first().json || {};\nconst LIMITE = '2028-03-01';\nconst venc = String(fila.fecha_vencimiento || '').slice(0, 10);\nconst vigenciaOk = /^\\d{4}-\\d{2}-\\d{2}$/.test(venc) && venc >= LIMITE;\nconst MSG_EXITO = 'Felicidades! Ha creado correctamente su registro.';\nconst MSG_VIGENCIA = '\u26a0\ufe0f No es posible realizar el registro, el pasaporte tiene que tener vigencia mayor al 1 de marzo de 2028';\nreturn [{ json: {\n  email: ctx.email || '',\n  remote_jid: ctx.remoteJid,\n  numero: ctx.numero,\n  nombre: fila.nombre || '',\n  apellidos: fila.apellidos || '',\n  numero_pasaporte: fila.numero_pasaporte || '',\n  nacionalidad: fila.nacionalidad || '',\n  sexo: fila.sexo || '',\n  fecha_nacimiento: fila.fecha_nacimiento || '',\n  fecha_vencimiento: venc,\n  pais_emisor: fila.pais_emisor || '',\n  numero_personal: fila.numero_personal || '',\n  is_exporation_date_valid: vigenciaOk ? 'True' : 'False',\n  estado: vigenciaOk ? 'REGISTRADO' : 'RECHAZADO_VIGENCIA',\n  fecha_registro: $now.toISO(),\n  vigenciaOk: vigenciaOk,\n  mensaje: vigenciaOk ? MSG_EXITO : MSG_VIGENCIA\n} }];"
+      },
+      "id": "2fe3d0c9-1cf2-4264-85c3-02f9906f0b56",
+      "name": "Build Registration Record",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        832,
+        608
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1JJqisxE-f-2Tn4tebOL-GvANbTaCY9_HCgfJ4wyktsM",
+          "mode": "list",
+          "cachedResultName": "Registro JMJ Corea 2027",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JJqisxE-f-2Tn4tebOL-GvANbTaCY9_HCgfJ4wyktsM/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JJqisxE-f-2Tn4tebOL-GvANbTaCY9_HCgfJ4wyktsM/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nacionalidad": "={{ $json.nacionalidad }}",
+            "Apellidos": "={{ $json.apellidos }}",
+            "Numero de pasaporte": "={{ $json.numero_pasaporte }}",
+            "Nombre(S)": "={{ $json.nombre }}",
+            "Sexo": "={{ $json.sexo }}",
+            "Fecha de nacimiento": "={{ $json.fecha_nacimiento }}",
+            "Expiracion del pasaporte": "={{ $json.fecha_vencimiento }}",
+            "Telefono": "={{ $json.numero }}",
+            "Pasaporte valido para viajar": "={{ $json.vigenciaOk }}",
+            "createdAt": "={{ $json.fecha_registro }}",
+            "updatedAt": "={{ $now.toISO() }}",
+            "ID": "==ROW()-1"
+          },
+          "matchingColumns": [
+            "ID"
+          ],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Nacionalidad",
+              "displayName": "Nacionalidad",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Numero de pasaporte",
+              "displayName": "Numero de pasaporte",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Apellidos",
+              "displayName": "Apellidos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nombre(S)",
+              "displayName": "Nombre(S)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Sexo",
+              "displayName": "Sexo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Fecha de nacimiento",
+              "displayName": "Fecha de nacimiento",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Telefono",
+              "displayName": "Telefono",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Expiracion del pasaporte",
+              "displayName": "Expiracion del pasaporte",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Pasaporte valido para viajar",
+              "displayName": "Pasaporte valido para viajar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "createdAt",
+              "displayName": "createdAt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "updatedAt",
+              "displayName": "updatedAt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "cbc47933-216b-4095-9b75-247d76dbdc68",
+      "name": "Append row in sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1040,
+        608
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "resource": "custom",
+        "customResource": "jmj.passenger",
+        "fieldsToCreateOrUpdate": {
+          "fields": [
+            {
+              "fieldName": "first_name",
+              "fieldValue": "={{ $(\"Build Registration Record\").item.json.nombre }}"
+            },
+            {
+              "fieldName": "last_name",
+              "fieldValue": "={{ $(\"Build Registration Record\").item.json.apellidos }}"
+            },
+            {
+              "fieldName": "birth_date",
+              "fieldValue": "={{ $(\"Build Registration Record\").item.json.fecha_nacimiento }}"
+            },
+            {
+              "fieldName": "email",
+              "fieldValue": "={{ $(\"Build Registration Record\").item.json.email }}"
+            },
+            {
+              "fieldName": "passport_number",
+              "fieldValue": "={{ $(\"Build Registration Record\").item.json.numero_pasaporte }}"
+            },
+            {
+              "fieldName": "passport_expiry_date",
+              "fieldValue": "={{ $(\"Build Registration Record\").item.json.fecha_vencimiento }}"
+            },
+            {
+              "fieldName": "is_passport_valid",
+              "fieldValue": "={{ $(\"Build Registration Record\").item.json.is_exporation_date_valid }}"
+            },
+            {
+              "fieldName": "whatsapp_bot_id",
+              "fieldValue": "={{ $(\"Evolution Webhook\").item.json.body.sender }}"
+            },
+            {
+              "fieldName": "passport_country_id",
+              "fieldValue": "={{ $(\"Build Registration Record\").item.json.nacionalidad }}"
+            },
+            {
+              "fieldName": "gender",
+              "fieldValue": "={{ $(\"Build Registration Record\").item.json.sexo }}"
+            }
+          ]
+        }
+      },
+      "id": "42aa31e4-34de-41dc-ae79-4338627ea402",
+      "name": "Create an item",
+      "type": "n8n-nodes-base.odoo",
+      "typeVersion": 1,
+      "position": [
+        1216,
+        608
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $(\"Evolution Webhook\").item.json.body.server_url }}/chat/getBase64FromMediaMessage/{{ $(\"Set Config\").first().json.evolutionInstance }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $(\"Evolution Webhook\").item.json.body.apikey }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ message: { key: { id: $(\"Get Session\").first().json.foto_message_id } }, convertToMp4: false }) }}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "142e87d9-f9be-47d9-b130-ae866ae35f12",
+      "name": "Fetch Passport Image For Odoo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1392,
+        608
+      ],
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "hasimg",
+              "leftValue": "={{ $json.base64 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a68f8abd-eb11-4a71-a0aa-dc60e42c8fc2",
+      "name": "Has Passport Image",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1568,
+        608
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "custom",
+        "customResource": "jmj.passenger.document",
+        "fieldsToCreateOrUpdate": {
+          "fields": [
+            {
+              "fieldName": "passenger_id",
+              "fieldValue": "={{ $(\"Create an item\").item.json.id }}"
+            },
+            {
+              "fieldName": "document_type",
+              "fieldValue": "passport"
+            },
+            {
+              "fieldName": "file",
+              "fieldValue": "={{ $(\"Fetch Passport Image For Odoo\").item.json.base64 }}"
+            },
+            {
+              "fieldName": "file_name",
+              "fieldValue": "={{ $(\"Fetch Passport Image For Odoo\").item.json.mimetype === \"application/pdf\" ? \"pasaporte.pdf\" : \"pasaporte.jpg\" }}"
+            }
+          ]
+        }
+      },
+      "id": "2b8cc186-19e9-47f4-b390-2becec88c84e",
+      "name": "Create Passport Document",
+      "type": "n8n-nodes-base.odoo",
+      "typeVersion": 1,
+      "position": [
+        1776,
+        496
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "OEU5X89bpPWLhzNB",
+          "cachedResultName": "registro_peregrinos"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "remote_jid",
+              "keyValue": "={{ $(\"Build Registration Record\").first().json.remote_jid }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "remote_jid": "={{ $(\"Build Registration Record\").first().json.remote_jid }}",
+            "estado": "={{ $(\"Build Registration Record\").first().json.estado }}",
+            "is_exporation_date_valid": "={{ $(\"Build Registration Record\").first().json.is_exporation_date_valid }}",
+            "actualizado": "={{ $now.toISO() }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "ca0ffc4c-71a8-43ce-b725-0766e66856c0",
+      "name": "Mark As Registered",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        2000,
+        624
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $(\"Evolution Webhook\").item.json.body.server_url }}/message/sendText/{{ $(\"Set Config\").first().json.evolutionInstance }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $(\"Evolution Webhook\").item.json.body.apikey }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ number: $json.numero, text: $json.mensaje, delay: 900 }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "09e879a2-9271-40e0-9088-ff24ac9af88c",
+      "name": "Send Retry Photo Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        864,
+        864
+      ],
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "OEU5X89bpPWLhzNB",
+          "cachedResultName": "registro_peregrinos"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "remote_jid",
+              "keyValue": "={{ $(\"Classify Route\").first().json.remoteJid }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "remote_jid": "={{ $(\"Classify Route\").first().json.remoteJid }}",
+            "estado": "ESPERANDO_FOTO",
+            "actualizado": "={{ $now.toISO() }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "5b70ba4d-47bd-40f8-8de9-39c90cc6eb9f",
+      "name": "Set State Retry Photo",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1040,
+        864
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $(\"Evolution Webhook\").item.json.body.server_url }}/message/sendText/{{ $(\"Set Config\").first().json.evolutionInstance }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $(\"Evolution Webhook\").item.json.body.apikey }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ number: $json.numero, text: $json.mensaje, delay: 900 }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "3758f9aa-e934-4c11-a131-3f134ce7e8f2",
+      "name": "Send Welcome Message",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        848,
+        1072
+      ],
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "OEU5X89bpPWLhzNB",
+          "cachedResultName": "registro_peregrinos"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "remote_jid",
+              "keyValue": "={{ $(\"Classify Route\").first().json.remoteJid }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "remote_jid": "={{ $(\"Classify Route\").first().json.remoteJid }}",
+            "estado": "ESPERANDO_PALABRA",
+            "actualizado": "={{ $now.toISO() }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "57dc561b-3b03-44f7-894a-2d723098dada",
+      "name": "Set State Awaiting Keyword",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1040,
+        1072
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const ctx = $json;\nconst fila = $('Get Session').first().json || {};\nconst estado = ctx.estadoActual || 'NUEVO';\nconst raw = String(ctx.texto || '').trim();\n\nconst MSG_NOMBRE = 'De acuerdo, haremos su registro sin pasaporte.\\n\\nPor favor escriba su *nombre completo* (nombres y apellidos), tal como aparecera en su pasaporte.';\nconst MSG_NOMBRE_ERROR = 'No pudimos leer su nombre. Por favor escriba su *nombre completo*: nombres y apellidos, por ejemplo: Juan Perez Lopez.';\nconst MSG_NACIMIENTO = 'Gracias. Ahora escriba su *fecha de nacimiento* en formato DD/MM/AAAA (por ejemplo: 05/03/1998).';\nconst MSG_NACIMIENTO_ERROR = 'Esa fecha no es valida. Por favor escriba su *fecha de nacimiento* en formato DD/MM/AAAA (por ejemplo: 05/03/1998).';\nconst MSG_CURP = 'Gracias. Ahora escriba su *CURP* o si no tiene, escribir N/A';\nconst MSG_CURP_ERROR = 'El formato no parece correcto. Por favor escriba su *CURP* de 18 caracteres, o escriba *N/A* si no cuenta con uno.';\nconst MSG_SEXO = 'Por ultimo, escriba su *sexo*: responda *M* para masculino o *F* para femenino.';\nconst MSG_SEXO_ERROR = 'No entendimos su respuesta. Responda *M* para masculino o *F* para femenino.';\nconst MSG_EXITO = 'Registro exitoso, sin embargo recuerda que necesitas tramitar tu pasaporte a tiempo para el viaje';\n\nlet nombre = fila.nombre || '';\nlet apellidos = fila.apellidos || '';\nlet fechaNacimiento = fila.fecha_nacimiento || '';\nlet curp = fila.curp_o_ine || '';\nlet sexo = fila.sexo || '';\n\nlet nuevoEstado = 'SP_ESPERANDO_NOMBRE';\nlet mensaje = MSG_NOMBRE;\nlet completo = false;\n\nif (estado === 'SP_ESPERANDO_NOMBRE') {\n  const partes = raw.split(/\\s+/).filter(function (p) { return p.length > 0; });\n  if (partes.length < 2) {\n    nuevoEstado = 'SP_ESPERANDO_NOMBRE';\n    mensaje = MSG_NOMBRE_ERROR;\n  } else {\n    const corte = partes.length >= 4 ? 2 : 1;\n    nombre = partes.slice(0, corte).join(' ');\n    apellidos = partes.slice(corte).join(' ');\n    nuevoEstado = 'SP_ESPERANDO_NACIMIENTO';\n    mensaje = MSG_NACIMIENTO;\n  }\n} else if (estado === 'SP_ESPERANDO_NACIMIENTO') {\n  const m = raw.match(/^(\\d{1,2})\\s*[\\/\\-\\.]\\s*(\\d{1,2})\\s*[\\/\\-\\.]\\s*(\\d{4})$/);\n  let valida = false;\n  if (m) {\n    const d = parseInt(m[1], 10);\n    const mo = parseInt(m[2], 10);\n    const y = parseInt(m[3], 10);\n    const f = new Date(Date.UTC(y, mo - 1, d));\n    valida = y >= 1900 && y <= new Date().getUTCFullYear() && mo >= 1 && mo <= 12 && f.getUTCDate() === d && (f.getUTCMonth() + 1) === mo;\n    if (valida) {\n      fechaNacimiento = y + '-' + ('0' + mo).slice(-2) + '-' + ('0' + d).slice(-2);\n    }\n  }\n  \n  if (valida) {\n    nuevoEstado = 'SP_ESPERANDO_CURP';\n    mensaje = MSG_CURP;\n  } else {\n    nuevoEstado = 'SP_ESPERANDO_NACIMIENTO';\n    mensaje = MSG_NACIMIENTO_ERROR;\n  }\n} else if (estado === 'SP_ESPERANDO_CURP') {\n  const inputCurp = raw.toUpperCase().trim();\n  \n  if (inputCurp === 'N/A' || inputCurp === 'NA' || inputCurp === 'NO') {\n    curp = 'N/A';\n    nuevoEstado = 'SP_ESPERANDO_SEXO';\n    mensaje = MSG_SEXO;\n  } else {\n    const curpTest = inputCurp.replace(/\\s+/g, '');\n    const regexCurp = /^[A-Z]{4}\\d{6}[A-Z]{6}[A-Z0-9]\\d$/;\n    \n    if (regexCurp.test(curpTest)) {\n      curp = curpTest;\n      nuevoEstado = 'SP_ESPERANDO_SEXO';\n      mensaje = MSG_SEXO;\n    } else {\n      nuevoEstado = 'SP_ESPERANDO_CURP';\n      mensaje = MSG_CURP_ERROR;\n    }\n  }\n} else if (estado === 'SP_ESPERANDO_SEXO') {\n  const s = raw.normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase().replace(/[^a-z]/g, '');\n  let leido = '';\n  \n  if (s === 'm' || s === 'h' || s === 'masculino' || s === 'hombre') {\n    leido = 'M';\n  } else if (s === 'f' || s === 'femenino' || s === 'mujer') {\n    leido = 'F';\n  }\n  \n  if (leido) {\n    sexo = leido;\n    nuevoEstado = 'REGISTRADO_SIN_PASAPORTE';\n    mensaje = MSG_EXITO;\n    completo = true;\n  } else {\n    nuevoEstado = 'SP_ESPERANDO_SEXO';\n    mensaje = MSG_SEXO_ERROR;\n  }\n} else {\n  nuevoEstado = 'SP_ESPERANDO_NOMBRE';\n  mensaje = MSG_NOMBRE;\n  nombre = '';\n  apellidos = '';\n  fechaNacimiento = '';\n  curp = '';\n  sexo = '';\n}\n\nreturn [{ \n  json: { \n    email: ctx.email || '',\n    remote_jid: ctx.remoteJid, \n    numero: ctx.numero, \n    nombre: nombre, \n    apellidos: apellidos, \n    fecha_nacimiento: fechaNacimiento, \n    curp_o_ine: curp, \n    sexo: sexo, \n    estado: nuevoEstado, \n    mensaje: mensaje, \n    completo: completo, \n    fecha_registro: $now.toISO() \n  } \n}];"
+      },
+      "id": "3c8d68d3-db3c-4394-8605-26dcbc7fd23b",
+      "name": "Build No Passport Step",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        832,
+        1536
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "OEU5X89bpPWLhzNB",
+          "cachedResultName": "registro_peregrinos"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "remote_jid",
+              "keyValue": "={{ $json.remote_jid }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "remote_jid": "={{ $json.remote_jid }}",
+            "estado": "={{ $json.estado }}",
+            "nombre": "={{ $json.nombre }}",
+            "apellidos": "={{ $json.apellidos }}",
+            "fecha_nacimiento": "={{ $json.fecha_nacimiento }}",
+            "sexo": "={{ $json.sexo }}",
+            "curp_o_ine": "={{ $json.curp_o_ine }}",
+            "actualizado": "={{ $now.toISO() }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "d8009b97-9f73-4221-a6d3-03f3109a5903",
+      "name": "Save No Passport Progress",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1056,
+        1536
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "spdone",
+              "leftValue": "={{ $(\"Build No Passport Step\").first().json.completo }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "ce081870-0655-45eb-8224-771cb5746239",
+      "name": "Is No Passport Complete",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1264,
+        1536
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1JJqisxE-f-2Tn4tebOL-GvANbTaCY9_HCgfJ4wyktsM",
+          "mode": "list",
+          "cachedResultName": "Registro JMJ Corea 2027",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JJqisxE-f-2Tn4tebOL-GvANbTaCY9_HCgfJ4wyktsM/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JJqisxE-f-2Tn4tebOL-GvANbTaCY9_HCgfJ4wyktsM/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Apellidos": "={{ $(\"Build No Passport Step\").first().json.apellidos }}",
+            "Nombre(S)": "={{ $(\"Build No Passport Step\").first().json.nombre }}",
+            "Sexo": "={{ $(\"Build No Passport Step\").first().json.sexo }}",
+            "Fecha de nacimiento": "={{ $(\"Build No Passport Step\").first().json.fecha_nacimiento }}",
+            "Telefono": "={{ $(\"Build No Passport Step\").first().json.numero }}",
+            "Pasaporte valido para viajar": "SIN PASAPORTE",
+            "createdAt": "={{ $(\"Build No Passport Step\").first().json.fecha_registro }}",
+            "updatedAt": "={{ $now.toISO() }}",
+            "ID": "==ROW()-1",
+            "curp": "={{ $(\"Build No Passport Step\").item.json.curp_o_ine }}"
+          },
+          "matchingColumns": [
+            "ID"
+          ],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Nacionalidad",
+              "displayName": "Nacionalidad",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Numero de pasaporte",
+              "displayName": "Numero de pasaporte",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Apellidos",
+              "displayName": "Apellidos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nombre(S)",
+              "displayName": "Nombre(S)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Sexo",
+              "displayName": "Sexo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Fecha de nacimiento",
+              "displayName": "Fecha de nacimiento",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Telefono",
+              "displayName": "Telefono",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Expiracion del pasaporte",
+              "displayName": "Expiracion del pasaporte",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Pasaporte valido para viajar",
+              "displayName": "Pasaporte valido para viajar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "createdAt",
+              "displayName": "createdAt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "updatedAt",
+              "displayName": "updatedAt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "curp",
+              "displayName": "curp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "81279acf-aec9-4b59-9360-cbfe081ce180",
+      "name": "Append No Passport Row",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1520,
+        1456
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "resource": "custom",
+        "customResource": "jmj.passenger",
+        "fieldsToCreateOrUpdate": {
+          "fields": [
+            {
+              "fieldName": "first_name",
+              "fieldValue": "={{ $(\"Build No Passport Step\").item.json.nombre }}"
+            },
+            {
+              "fieldName": "last_name",
+              "fieldValue": "={{ $(\"Build No Passport Step\").item.json.apellidos }}"
+            },
+            {
+              "fieldName": "birth_date",
+              "fieldValue": "={{ $(\"Build No Passport Step\").item.json.fecha_nacimiento }}"
+            },
+            {
+              "fieldName": "email",
+              "fieldValue": "={{ $(\"Build No Passport Step\").item.json.email }}"
+            },
+            {
+              "fieldName": "is_passport_valid",
+              "fieldValue": "False"
+            },
+            {
+              "fieldName": "whatsapp_bot_id",
+              "fieldValue": "={{ $(\"Evolution Webhook\").item.json.body.sender }}"
+            },
+            {
+              "fieldName": "gender",
+              "fieldValue": "={{ $(\"Build No Passport Step\").item.json.sexo }}"
+            },
+            {
+              "fieldName": "curp",
+              "fieldValue": "={{ $(\"Build No Passport Step\").item.json.curp_o_ine }}"
+            }
+          ]
+        }
+      },
+      "id": "07ae0a1b-87d2-4655-81f6-2f8b9da879f4",
+      "name": "Create No Passport Item",
+      "type": "n8n-nodes-base.odoo",
+      "typeVersion": 1,
+      "position": [
+        1664,
+        1456
+      ],
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "resource": "custom",
+        "customResource": "jmj.passenger",
+        "operation": "get",
+        "customResourceId": "={{ $(\"Create No Passport Item\").first().json.id }}",
+        "options": {
+          "fieldsList": [
+            "web_form_url",
+            "access_token"
+          ]
+        }
+      },
+      "id": "5a8b992e-b873-4c08-8070-9fdacb3353ef",
+      "name": "Get No Passport Form Link",
+      "type": "n8n-nodes-base.odoo",
+      "typeVersion": 1,
+      "position": [
+        1888,
+        1456
+      ],
+      "retryOnFail": true,
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $(\"Evolution Webhook\").item.json.body.server_url }}/message/sendText/{{ $(\"Set Config\").first().json.evolutionInstance }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $(\"Evolution Webhook\").item.json.body.apikey }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ number: $(\"Build No Passport Step\").first().json.numero, text: $(\"Build No Passport Step\").first().json.mensaje + ($(\"Get No Passport Form Link\").first().json.web_form_url ? \"\\n\\nPara terminar, favor de completar los datos faltantes en este formulario:\\n\" + $(\"Get No Passport Form Link\").first().json.web_form_url : \"\"), delay: 900 }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "bec99f4d-38ea-4769-81d9-deacf482b5ae",
+      "name": "Send No Passport Success",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        2112,
+        1456
+      ],
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $(\"Evolution Webhook\").item.json.body.server_url }}/message/sendText/{{ $(\"Set Config\").first().json.evolutionInstance }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $(\"Evolution Webhook\").item.json.body.apikey }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ number: $(\"Build No Passport Step\").first().json.numero, text: $(\"Build No Passport Step\").first().json.mensaje, delay: 900 }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "9f375b5f-4162-4580-98e5-13399ac77c31",
+      "name": "Send No Passport Prompt",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1520,
+        1632
+      ],
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "resource": "custom",
+        "customResource": "jmj.passenger",
+        "operation": "get",
+        "customResourceId": "={{ $(\"Create an item\").first().json.id }}",
+        "options": {
+          "fieldsList": [
+            "web_form_url",
+            "access_token"
+          ]
+        }
+      },
+      "id": "fa798335-37fe-47b3-9a3e-31f18aaf499c",
+      "name": "Get Passenger Form Link",
+      "type": "n8n-nodes-base.odoo",
+      "typeVersion": 1,
+      "position": [
+        2208,
+        592
+      ],
+      "retryOnFail": true,
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $(\"Evolution Webhook\").item.json.body.server_url }}/message/sendText/{{ $(\"Set Config\").first().json.evolutionInstance }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $(\"Evolution Webhook\").item.json.body.apikey }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ number: $(\"Build Registration Record\").first().json.numero, text: $(\"Build Registration Record\").first().json.mensaje + ($(\"Get Passenger Form Link\").first().json.web_form_url ? \"\\n\\nPara terminar, favor de completar los datos faltantes en este formulario:\\n\" + $(\"Get Passenger Form Link\").first().json.web_form_url : \"\"), delay: 900 }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "428d9480-6656-4b44-a7a7-5e2598c8042a",
+      "name": "Send Registration Success",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        2352,
+        592
+      ],
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "content": "## Registro de peregrinos por WhatsApp\n\nLa URL del servidor y la apikey se toman del propio payload de Evolution (`body.server_url`, `body.apikey`).\n\nEn **Set Config** solo se edita la URL del OCR y la imagen de ejemplo del pasaporte.\n\nWebhook registrado en Evolution escuchando unicamente `MESSAGES_UPSERT`.",
+        "height": 200,
+        "width": 508,
+        "color": 4
+      },
+      "id": "0faf3408-9ebb-4846-b135-6fc309b2f6b0",
+      "name": "Sticky Note eccae49c",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1024,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Maquina de estados\n\nEl bot esta MUDO hasta que llega una frase de activacion, por ejemplo: **\"Quiero registrarme para la JMJ Corea 2027\"** (se ignoran mayusculas, acentos y puntuacion; ver la lista y el regex en **Classify Route**).\n\nCON PASAPORTE: NUEVO --frase--> ESPERANDO_PALABRA --\"Pasaporte\"--> ESPERANDO_FOTO --foto legible--> ESPERANDO_CONFIRMACION --\"OK\"--> REGISTRADO / RECHAZADO_VIGENCIA\n\nSIN PASAPORTE: ESPERANDO_PALABRA --\"Sin pasaporte\"--> SP_ESPERANDO_NOMBRE --> SP_ESPERANDO_NACIMIENTO --> SP_ESPERANDO_CURP --> SP_ESPERANDO_SEXO --> REGISTRADO_SIN_PASAPORTE\n\nCualquier mensaje que no encaje en una ruta cae en el fallback del Switch y NO produce respuesta.",
+        "height": 200,
+        "width": 748,
+        "color": 5
+      },
+      "id": "2af746bb-13ca-4a76-b361-abac16821a4c",
+      "name": "Sticky Note b8312f52",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -176,
+        288
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Lectura del pasaporte\n\nEvolution entrega la imagen en base64 -> se convierte a binario -> se sube como `file` (multipart) al OCR API Gateway.\n\nSe acepta el resultado solo si el MRZ existe y `checksum_valid` es true.\n\n**Save Passport Data** guarda ademas `foto_message_id`, el ID del mensaje de WhatsApp con la foto, para poder recuperar la imagen al confirmar.",
+        "height": 456,
+        "width": 1436,
+        "color": 3
+      },
+      "id": "fb86425b-3a8a-4b14-bf38-289b8eaa4ebf",
+      "name": "Sticky Note 73283fba",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        736,
+        -128
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Adjuntar el pasaporte en Odoo\n\nLa foto y el alta del peregrino ocurren en ejecuciones distintas, asi que al confirmar con OK se vuelve a pedir el base64 a Evolution usando `foto_message_id` y se crea un `jmj.passenger.document` (tipo `passport`) ligado al peregrino recien creado.\n\nSi Evolution ya no tiene el medio, la rama false del IF deja pasar el registro sin adjunto.",
+        "height": 408,
+        "width": 940,
+        "color": 6
+      },
+      "id": "d46094c8-1986-476a-aeff-b0b7b8a71096",
+      "name": "Sticky Note 9f083b84",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1552,
+        368
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Enlace del formulario web\n\nDespues de crear el peregrino se lee `web_form_url` de Odoo y se agrega al mensaje de exito para que la persona termine de llenar sus datos faltantes.\n\nRequiere que `web.base.url` en Odoo apunte al dominio publico.",
+        "height": 360,
+        "width": 716,
+        "color": 7
+      },
+      "id": "08fe61d0-b7cf-463f-90d9-b83914aa7deb",
+      "name": "Sticky Note 30644d04",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        800,
+        432
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Registro SIN pasaporte\n\nSe activa con la opcion **\"Sin pasaporte\"**. Los datos se piden por chat: nombre completo -> fecha de nacimiento -> CURP -> sexo.\n\nAl completar se escribe en Google Sheets y en Odoo (`jmj.passenger`, sin numero ni vigencia de pasaporte) y se envia el mensaje de exito con el enlace del formulario web.",
+        "height": 520,
+        "width": 1532,
+        "color": 7
+      },
+      "id": "ccce098b-198c-4591-a4e6-950f81211c2a",
+      "name": "Sticky Note db48a627",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        800,
+        1280
+      ]
+    }
+  ],
+  "activeVersion": {
+    "nodes": [
+      {
+        "parameters": {
+          "httpMethod": "POST",
+          "path": "b2ae7bd7-28f1-4855-bab7-03960e0fa4fd",
+          "options": {
+            "responseCode": {
+              "values": {}
+            }
+          }
+        },
+        "id": "ba60ea1a-7482-441c-aad4-dd451c526999",
+        "name": "Evolution Webhook",
+        "type": "n8n-nodes-base.webhook",
+        "typeVersion": 2.1,
+        "position": [
+          -1008,
+          544
+        ],
+        "webhookId": "b2ae7bd7-28f1-4855-bab7-03960e0fa4fd"
+      },
+      {
+        "parameters": {
+          "assignments": {
+            "assignments": [
+              {
+                "id": "cfg1",
+                "name": "evolutionUrl",
+                "value": "https://evolution.eviniegra.software",
+                "type": "string"
+              },
+              {
+                "id": "cfg2",
+                "name": "evolutionInstance",
+                "value": "={{ $json.body.instance }}",
+                "type": "string"
+              },
+              {
+                "id": "cfg3",
+                "name": "ocrUrl",
+                "value": "https://ocr.eviniegra.qzz.io",
+                "type": "string"
+              },
+              {
+                "id": "cfg4",
+                "name": "imagenEjemploUrl",
+                "value": "https://raw.githubusercontent.com/EstebanVini/ocr_api_gateway/refs/heads/main/Ej_Foto_pasaporte.jpg",
+                "type": "string"
+              },
+              {
+                "id": "d21b7594-f077-42cb-85bf-600896f41877",
+                "name": "",
+                "value": "",
+                "type": "string"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "id": "782f8bfb-eb6f-4cca-845f-4e4ca402e0bd",
+        "name": "Set Config",
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 3.4,
+        "position": [
+          -800,
+          544
+        ]
+      },
+      {
+        "parameters": {
+          "jsCode": "const wh = $('Evolution Webhook').first().json;\nconst body = wh.body || wh;\nconst data = body.data || {};\nconst key = data.key || {};\nconst message = data.message || {};\nconst remoteJid = key.remoteJid || '';\nconst numero = remoteJid.split('@')[0].split(':')[0];\nconst esGrupo = remoteJid.indexOf('@g.us') !== -1;\nconst ext = message.extendedTextMessage || {};\nconst img = message.imageMessage || {};\nconst texto = message.conversation || ext.text || img.caption || '';\nconst hayImagen = !!message.imageMessage || data.messageType === 'imageMessage';\nconst tipo = hayImagen ? 'image' : (texto ? 'text' : 'otro');\nconst evento = String(body.event || '').toLowerCase().replace(/_/g, '.');\nconst procesable = evento === 'messages.upsert' && !key.fromMe && !esGrupo && remoteJid !== '' && tipo !== 'otro';\nreturn [{ json: { evento, instancia: body.instance || '', remoteJid, numero, esGrupo, fromMe: !!key.fromMe, messageId: key.id || '', pushName: data.pushName || '', texto, tipo, procesable } }];"
+        },
+        "id": "f4cafb25-28a1-4cf5-aeb2-c37e0e61502d",
+        "name": "Normalize Evolution Event",
+        "type": "n8n-nodes-base.code",
+        "typeVersion": 2,
+        "position": [
+          -608,
+          544
+        ]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "strict",
+              "version": 3
+            },
+            "conditions": [
+              {
+                "id": "proc",
+                "leftValue": "={{ $json.procesable }}",
+                "rightValue": true,
+                "operator": {
+                  "type": "boolean",
+                  "operation": "true",
+                  "singleValue": true
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "id": "1f06cb2f-e68e-47ea-b722-8a2b6258f65b",
+        "name": "Is Client Message",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2.3,
+        "position": [
+          -192,
+          544
+        ]
+      },
+      {
+        "parameters": {
+          "operation": "get",
+          "dataTableId": {
+            "__rl": true,
+            "mode": "list",
+            "value": "OEU5X89bpPWLhzNB",
+            "cachedResultName": "registro_peregrinos"
+          },
+          "matchType": "allConditions",
+          "filters": {
+            "conditions": [
+              {
+                "keyName": "remote_jid",
+                "keyValue": "={{ $json.remoteJid }}"
+              }
+            ]
+          },
+          "limit": 1,
+          "orderBy": true,
+          "orderByColumn": "updatedAt"
+        },
+        "id": "fd6f8175-e15e-4965-91b3-39168b799ff5",
+        "name": "Get Session",
+        "type": "n8n-nodes-base.dataTable",
+        "typeVersion": 1.1,
+        "position": [
+          48,
+          544
+        ],
+        "alwaysOutputData": true
+      },
+      {
+        "parameters": {
+          "jsCode": "const msg = $('Normalize Evolution Event').first().json;\nconst fila = $json || {};\nconst estado = fila.estado || 'NUEVO';\n\nconst norm = function (s) { return String(s || '').normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim(); };\nconst texto = norm(msg.texto);\nconst compacto = texto.replace(/ /g, '');\nconst esImagen = msg.tipo === 'image';\n\nconst FRASES_ACTIVACION = ['quiero registrarme para la jmj corea 2027', 'quiero registrarme para la jmj de corea 2027', 'quiero registrarme para corea 2027', 'quiero registrarme para la jmj', 'quiero registrarme para la jmj de seul 2027', 'quiero registrarme para la jmj seul 2027', 'quiero registrarme para la jmj 2027', 'quiero registrarme para seul 2027', 'quiero registrarme para la jmj de corea', 'quiero registrarme para la jmj de seul', 'quiero registrarme para corea', 'quiero registrarme para la jornada mundial de la juventud'];\nconst RE_ACTIVACION = /^quiero (?:registrarme|inscribirme|apuntarme|anotarme)\\s*(?:para|a|al|en)?\\s*(?:la|el|las|los)?\\s*(?:jmj|jornada mundial de la juventud|jornada mundial de juventud|corea|seul|seoul|peregrinacion)\\b/;\nconst esActivacion = FRASES_ACTIVACION.indexOf(texto) !== -1 || RE_ACTIVACION.test(texto);\n\nconst OPCIONES_PASAPORTE = ['pasaporte', 'conpasaporte', 'registroconpasaporte', 'registro'];\nconst OPCIONES_SIN_PASAPORTE = ['sinpasaporte', 'nopasaporte', 'notengopasaporte', 'registrosinpasaporte'];\n\n// AQUI EST\u00c1 EL CAMBIO: Se agreg\u00f3 'SP_ESPERANDO_CURP' al arreglo\nconst ESTADOS_SIN_PASAPORTE = ['SP_ESPERANDO_NOMBRE', 'SP_ESPERANDO_NACIMIENTO', 'SP_ESPERANDO_CURP', 'SP_ESPERANDO_SEXO'];\n\nconst MSG_BIENVENIDA = 'Para realizar su registro de peregrino responda con una de estas opciones:\\n\\n*Pasaporte* - si ya cuenta con su pasaporte y quiere registrarse con el.\\n*Sin pasaporte* - si aun no tiene pasaporte y quiere registrarse de todas formas.';\nconst MSG_INSTRUCCIONES = 'Favor de mandar foto de su pasaporte COMPLETA, que salgan todos los datos incluidos los datos de la parte inferior del pasaporte (MRZ)';\nconst MSG_REINTENTO = 'De acuerdo, no daremos esos datos por correctos.\\n\\n' + MSG_INSTRUCCIONES;\n\nlet route = 'ignore';\n\nif (esActivacion) {\n  route = 'welcome';\n} else if (esImagen) {\n  route = (estado === 'ESPERANDO_FOTO' || estado === 'ESPERANDO_CONFIRMACION') ? 'ocr' : 'ignore';\n} else if (estado !== 'NUEVO' && OPCIONES_SIN_PASAPORTE.indexOf(compacto) !== -1) {\n  route = 'sin_pasaporte';\n} else if (estado !== 'NUEVO' && OPCIONES_PASAPORTE.indexOf(compacto) !== -1) {\n  route = 'instructions';\n} else if (ESTADOS_SIN_PASAPORTE.indexOf(estado) !== -1) {\n  route = 'sin_pasaporte';\n} else if (estado === 'ESPERANDO_CONFIRMACION') {\n  route = (compacto === 'ok' || compacto === 'okay' || compacto === 'okey') ? 'confirm' : 'retry_photo';\n} else if (estado === 'ESPERANDO_FOTO') {\n  route = 'instructions';\n} else if (estado === 'ESPERANDO_PALABRA') {\n  route = 'welcome';\n}\n\nconst mensajes = { \n  welcome: MSG_BIENVENIDA, \n  instructions: MSG_INSTRUCCIONES, \n  retry_photo: MSG_REINTENTO, \n  confirm: '', \n  ocr: '', \n  sin_pasaporte: '', \n  ignore: '' \n};\n\nreturn [{ \n  json: Object.assign({}, msg, { \n    estadoActual: estado, \n    filaId: fila.id || null, \n    route, \n    mensaje: mensajes[route] \n  }) \n}];"
+        },
+        "id": "d73a2f11-4d16-4ffe-a189-32fe39fe2210",
+        "name": "Classify Route",
+        "type": "n8n-nodes-base.code",
+        "typeVersion": 2,
+        "position": [
+          256,
+          544
+        ]
+      },
+      {
+        "parameters": {
+          "rules": {
+            "values": [
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict",
+                    "version": 3
+                  },
+                  "conditions": [
+                    {
+                      "id": "sw0",
+                      "leftValue": "={{ $json.route }}",
+                      "rightValue": "instructions",
+                      "operator": {
+                        "type": "string",
+                        "operation": "equals"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "Instrucciones"
+              },
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict",
+                    "version": 3
+                  },
+                  "conditions": [
+                    {
+                      "id": "sw1",
+                      "leftValue": "={{ $json.route }}",
+                      "rightValue": "ocr",
+                      "operator": {
+                        "type": "string",
+                        "operation": "equals"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "Leer Pasaporte"
+              },
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict",
+                    "version": 3
+                  },
+                  "conditions": [
+                    {
+                      "id": "sw2",
+                      "leftValue": "={{ $json.route }}",
+                      "rightValue": "confirm",
+                      "operator": {
+                        "type": "string",
+                        "operation": "equals"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "Confirmar OK"
+              },
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict",
+                    "version": 3
+                  },
+                  "conditions": [
+                    {
+                      "id": "sw3",
+                      "leftValue": "={{ $json.route }}",
+                      "rightValue": "retry_photo",
+                      "operator": {
+                        "type": "string",
+                        "operation": "equals"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "Reintentar Foto"
+              },
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict",
+                    "version": 3
+                  },
+                  "conditions": [
+                    {
+                      "id": "sw4",
+                      "leftValue": "={{ $json.route }}",
+                      "rightValue": "welcome",
+                      "operator": {
+                        "type": "string",
+                        "operation": "equals"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "Frase De Activacion"
+              },
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict",
+                    "version": 3
+                  },
+                  "conditions": [
+                    {
+                      "id": "sw5",
+                      "leftValue": "={{ $json.route }}",
+                      "rightValue": "sin_pasaporte",
+                      "operator": {
+                        "type": "string",
+                        "operation": "equals"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "Sin Pasaporte"
+              }
+            ]
+          },
+          "options": {
+            "fallbackOutput": "none"
+          }
+        },
+        "id": "798cf788-46fd-43f6-bd80-6a8473ed3f7e",
+        "name": "Route By Intent",
+        "type": "n8n-nodes-base.switch",
+        "typeVersion": 3.4,
+        "position": [
+          512,
+          576
+        ]
+      },
+      {
+        "parameters": {
+          "method": "POST",
+          "url": "={{ $(\"Evolution Webhook\").item.json.body.server_url }}/message/sendMedia/{{ $(\"Set Config\").first().json.evolutionInstance }}",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "apikey",
+                "value": "={{ $(\"Evolution Webhook\").item.json.body.apikey }}"
+              }
+            ]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={{ JSON.stringify({ number: $json.numero, mediatype: \"image\", mimetype: \"image/jpeg\", media: \"https://raw.githubusercontent.com/EstebanVini/ocr_api_gateway/refs/heads/main/Ej_Foto_pasaporte.jpg\", fileName: \"Ej_Foto_pasaporte.jpg\", caption: $json.mensaje, delay: 900 }) }}",
+          "options": {
+            "timeout": 30000
+          }
+        },
+        "id": "ca453659-2461-4f6f-aaa9-b42bcd4096d5",
+        "name": "Send Passport Instructions",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.4,
+        "position": [
+          832,
+          -64
+        ],
+        "retryOnFail": true
+      },
+      {
+        "parameters": {
+          "operation": "upsert",
+          "dataTableId": {
+            "__rl": true,
+            "mode": "list",
+            "value": "OEU5X89bpPWLhzNB",
+            "cachedResultName": "registro_peregrinos"
+          },
+          "matchType": "allConditions",
+          "filters": {
+            "conditions": [
+              {
+                "keyName": "remote_jid",
+                "keyValue": "={{ $(\"Classify Route\").first().json.remoteJid }}"
+              }
+            ]
+          },
+          "columns": {
+            "mappingMode": "defineBelow",
+            "value": {
+              "remote_jid": "={{ $(\"Classify Route\").first().json.remoteJid }}",
+              "estado": "ESPERANDO_FOTO",
+              "actualizado": "={{ $now.toISO() }}"
+            },
+            "matchingColumns": [],
+            "schema": []
+          },
+          "options": {}
+        },
+        "id": "78930a46-cf1c-4feb-96ee-a9d47e645522",
+        "name": "Set State Awaiting Photo",
+        "type": "n8n-nodes-base.dataTable",
+        "typeVersion": 1.1,
+        "position": [
+          1008,
+          -64
+        ]
+      },
+      {
+        "parameters": {
+          "method": "POST",
+          "url": "={{ $(\"Evolution Webhook\").item.json.body.server_url }}/chat/getBase64FromMediaMessage/{{ $(\"Set Config\").first().json.evolutionInstance }}",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "apikey",
+                "value": "={{ $(\"Evolution Webhook\").item.json.body.apikey }}"
+              }
+            ]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={{ JSON.stringify({ message: { key: { id: $json.messageId } }, convertToMp4: false }) }}",
+          "options": {
+            "timeout": 60000
+          }
+        },
+        "id": "c6d23e52-01d2-467b-b562-d231d0068af9",
+        "name": "Fetch Image Base64",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.4,
+        "position": [
+          832,
+          224
+        ],
+        "retryOnFail": true
+      },
+      {
+        "parameters": {
+          "operation": "toBinary",
+          "sourceProperty": "base64",
+          "options": {
+            "fileName": "pasaporte.jpg",
+            "mimeType": "={{ $json.mimetype || \"image/jpeg\" }}"
+          }
+        },
+        "id": "0e815ce9-50b4-43f4-b3b9-10f317e6beeb",
+        "name": "Convert Base64 To Image",
+        "type": "n8n-nodes-base.convertToFile",
+        "typeVersion": 1.1,
+        "position": [
+          1008,
+          224
+        ]
+      },
+      {
+        "parameters": {
+          "method": "POST",
+          "url": "={{ $(\"Set Config\").first().json.ocrUrl }}/api/v1/ocr",
+          "sendBody": true,
+          "contentType": "multipart-form-data",
+          "bodyParameters": {
+            "parameters": [
+              {
+                "parameterType": "formBinaryData",
+                "name": "file",
+                "inputDataFieldName": "data"
+              },
+              {
+                "name": "language",
+                "value": "spa"
+              },
+              {
+                "name": "ocr_engine",
+                "value": "2"
+              },
+              {
+                "name": "detect_orientation",
+                "value": "true"
+              }
+            ]
+          },
+          "options": {
+            "response": {
+              "response": {
+                "fullResponse": true,
+                "neverError": true
+              }
+            },
+            "timeout": 180000
+          }
+        },
+        "id": "21d3c86f-f592-4e88-a435-9994c3cdced3",
+        "name": "Extract Passport Data",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.4,
+        "position": [
+          1184,
+          224
+        ],
+        "retryOnFail": true
+      },
+      {
+        "parameters": {
+          "jsCode": "const ctx = $('Classify Route').first().json;\nconst full = $json || {};\nconst status = full.statusCode || 200;\nconst resp = full.body || full;\nconst fmt = function (iso) { if (!iso) { return '-'; } const p = String(iso).split('-'); return p.length === 3 ? (p[2] + '/' + p[1] + '/' + p[0]) : String(iso); };\nconst errores = { UNSUPPORTED_FILE_TYPE: 'El archivo enviado no es una imagen v\u00e1lida.', FILE_TOO_LARGE: 'La imagen pesa demasiado.', COMPRESSION_FAILED: 'No pudimos procesar la imagen por su tama\u00f1o.', PDF_PAGE_LIMIT_EXCEEDED: 'El documento tiene demasiadas p\u00e1ginas.', CORRUPT_OR_ENCRYPTED_FILE: 'El archivo est\u00e1 da\u00f1ado o protegido.', OCR_SPACE_AUTH_ERROR: 'El servicio de lectura no est\u00e1 disponible en este momento.', OCR_SPACE_ERROR: 'El servicio de lectura no pudo procesar la imagen.' };\nconst REPETIR = '\\n\\nPor favor env\u00ede de nuevo una foto de su pasaporte COMPLETA, bien iluminada y sin reflejos, que salgan todos los datos incluidos los de la parte inferior (MRZ).';\nconst mrz = (resp.passport || {}).mrz || null;\nlet ok = false;\nlet mensaje = '';\nlet datos = { nombre: '', apellidos: '', numero_pasaporte: '', nacionalidad: '', sexo: '', fecha_nacimiento: '', fecha_vencimiento: '', pais_emisor: '', numero_personal: '' };\nif (status >= 400 || resp.success === false) {\n  const code = ((resp.error || {}).code) || ('HTTP_' + status);\n  mensaje = 'No pudimos leer su pasaporte. ' + (errores[code] || 'Ocurri\u00f3 un problema al procesar la imagen.') + REPETIR;\n} else if (!mrz) {\n  mensaje = 'No pudimos detectar la zona MRZ (las dos l\u00edneas del pie de la p\u00e1gina de datos) de su pasaporte.' + REPETIR;\n} else if (mrz.checksum_valid !== true) {\n  mensaje = 'La zona MRZ de su pasaporte no se ley\u00f3 con claridad.' + REPETIR;\n} else {\n  ok = true;\n  datos = { nombre: mrz.given_names || '', apellidos: mrz.surname || '', numero_pasaporte: mrz.passport_number || '', nacionalidad: mrz.nationality || '', sexo: mrz.sex || '', fecha_nacimiento: mrz.date_of_birth || '', fecha_vencimiento: mrz.date_of_expiry || '', pais_emisor: mrz.issuing_country || '', numero_personal: mrz.personal_number || '' };\n  const aviso = (resp.passport || {}).matches_visible_text === false ? '\\n\\n_Revise con cuidado: algunos datos podr\u00edan no coincidir con el documento._' : '';\n  mensaje = 'Estos son los datos que le\u00edmos de su pasaporte:\\n\\n' +\n    '*Apellidos:* ' + datos.apellidos + '\\n' +\n    '*Nombre(s):* ' + datos.nombre + '\\n' +\n    '*No. de pasaporte:* ' + datos.numero_pasaporte + '\\n' +\n    '*Nacionalidad:* ' + datos.nacionalidad + '\\n' +\n    '*Sexo:* ' + datos.sexo + '\\n' +\n    '*Fecha de nacimiento:* ' + fmt(datos.fecha_nacimiento) + '\\n' +\n    '*Vence:* ' + fmt(datos.fecha_vencimiento) + aviso + '\\n\\n' +\n    'Si todos los datos son correctos responda con la palabra *OK* para completar su registro.\\n' +\n    'Si algo no es correcto, env\u00ede de nuevo una foto de su pasaporte.';\n}\nreturn [{ json: Object.assign({ ok: ok, mensaje: mensaje, numero: ctx.numero, remoteJid: ctx.remoteJid }, datos) }];"
+        },
+        "id": "32b7bb66-3023-4c85-9e6a-264f6fc40f6f",
+        "name": "Build Passport Summary",
+        "type": "n8n-nodes-base.code",
+        "typeVersion": 2,
+        "position": [
+          1376,
+          224
+        ]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "strict"
+            },
+            "conditions": [
+              {
+                "id": "okmrz",
+                "leftValue": "={{ $json.ok }}",
+                "rightValue": true,
+                "operator": {
+                  "type": "boolean",
+                  "operation": "true",
+                  "singleValue": true
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "id": "f4b50c8e-1bdb-4d01-8989-402def85eb8b",
+        "name": "Is Passport Valid",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2.3,
+        "position": [
+          1552,
+          224
+        ]
+      },
+      {
+        "parameters": {
+          "operation": "upsert",
+          "dataTableId": {
+            "__rl": true,
+            "mode": "list",
+            "value": "OEU5X89bpPWLhzNB",
+            "cachedResultName": "registro_peregrinos"
+          },
+          "matchType": "allConditions",
+          "filters": {
+            "conditions": [
+              {
+                "keyName": "remote_jid",
+                "keyValue": "={{ $json.remoteJid }}"
+              }
+            ]
+          },
+          "columns": {
+            "mappingMode": "defineBelow",
+            "value": {
+              "remote_jid": "={{ $json.remoteJid }}",
+              "estado": "ESPERANDO_CONFIRMACION",
+              "nombre": "={{ $json.nombre }}",
+              "apellidos": "={{ $json.apellidos }}",
+              "numero_pasaporte": "={{ $json.numero_pasaporte }}",
+              "nacionalidad": "={{ $json.nacionalidad }}",
+              "sexo": "={{ $json.sexo }}",
+              "fecha_nacimiento": "={{ $json.fecha_nacimiento }}",
+              "fecha_vencimiento": "={{ $json.fecha_vencimiento }}",
+              "pais_emisor": "={{ $json.pais_emisor }}",
+              "numero_personal": "={{ $json.numero_personal }}",
+              "actualizado": "={{ $now.toISO() }}"
+            },
+            "matchingColumns": [],
+            "schema": []
+          },
+          "options": {}
+        },
+        "id": "80685bee-5ced-49a0-91c5-3e530bc63c4d",
+        "name": "Save Passport Data",
+        "type": "n8n-nodes-base.dataTable",
+        "typeVersion": 1.1,
+        "position": [
+          1760,
+          128
+        ]
+      },
+      {
+        "parameters": {
+          "method": "POST",
+          "url": "={{ $(\"Evolution Webhook\").item.json.body.server_url }}/message/sendText/{{ $(\"Set Config\").first().json.evolutionInstance }}",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "apikey",
+                "value": "={{ $(\"Evolution Webhook\").item.json.body.apikey }}"
+              }
+            ]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={{ JSON.stringify({ number: $(\"Build Passport Summary\").first().json.numero, text: $(\"Build Passport Summary\").first().json.mensaje, delay: 900 }) }}",
+          "options": {
+            "timeout": 30000
+          }
+        },
+        "id": "23e2c510-c0e6-4adf-9ada-aa3135629473",
+        "name": "Send Data For Confirmation",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.4,
+        "position": [
+          1984,
+          128
+        ],
+        "retryOnFail": true
+      },
+      {
+        "parameters": {
+          "method": "POST",
+          "url": "={{ $(\"Evolution Webhook\").item.json.body.server_url }}/message/sendText/{{ $(\"Set Config\").first().json.evolutionInstance }}",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "apikey",
+                "value": "={{ $(\"Evolution Webhook\").item.json.body.apikey }}"
+              }
+            ]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={{ JSON.stringify({ number: $json.numero, text: $json.mensaje, delay: 900 }) }}",
+          "options": {
+            "timeout": 30000
+          }
+        },
+        "id": "412826c5-1e97-406a-a718-08abcbcf3f30",
+        "name": "Send Passport Read Error",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.4,
+        "position": [
+          1760,
+          352
+        ],
+        "retryOnFail": true
+      },
+      {
+        "parameters": {
+          "operation": "upsert",
+          "dataTableId": {
+            "__rl": true,
+            "mode": "list",
+            "value": "OEU5X89bpPWLhzNB",
+            "cachedResultName": "registro_peregrinos"
+          },
+          "matchType": "allConditions",
+          "filters": {
+            "conditions": [
+              {
+                "keyName": "remote_jid",
+                "keyValue": "={{ $(\"Classify Route\").first().json.remoteJid }}"
+              }
+            ]
+          },
+          "columns": {
+            "mappingMode": "defineBelow",
+            "value": {
+              "remote_jid": "={{ $(\"Classify Route\").first().json.remoteJid }}",
+              "estado": "ESPERANDO_FOTO",
+              "actualizado": "={{ $now.toISO() }}"
+            },
+            "matchingColumns": [],
+            "schema": []
+          },
+          "options": {}
+        },
+        "id": "c84e1ffd-8215-4708-82d9-3a77e896a59a",
+        "name": "Reset State To Awaiting Photo",
+        "type": "n8n-nodes-base.dataTable",
+        "typeVersion": 1.1,
+        "position": [
+          1984,
+          352
+        ]
+      },
+      {
+        "parameters": {
+          "jsCode": "const ctx = $('Classify Route').first().json;\nconst fila = $('Get Session').first().json || {};\nconst LIMITE = '2028-03-01';\nconst venc = String(fila.fecha_vencimiento || '').slice(0, 10);\nconst vigenciaOk = /^\\d{4}-\\d{2}-\\d{2}$/.test(venc) && venc >= LIMITE;\nconst MSG_EXITO = 'Felicidades! Ha creado correctamente su registro.';\nconst MSG_VIGENCIA = '\u26a0\ufe0f No es posible realizar el registro, el pasaporte tiene que tener vigencia mayor al 1 de marzo de 2028';\nreturn [{ json: {\n  remote_jid: ctx.remoteJid,\n  numero: ctx.numero,\n  nombre: fila.nombre || '',\n  apellidos: fila.apellidos || '',\n  numero_pasaporte: fila.numero_pasaporte || '',\n  nacionalidad: fila.nacionalidad || '',\n  sexo: fila.sexo || '',\n  fecha_nacimiento: fila.fecha_nacimiento || '',\n  fecha_vencimiento: venc,\n  pais_emisor: fila.pais_emisor || '',\n  numero_personal: fila.numero_personal || '',\n  is_exporation_date_valid: vigenciaOk ? 'True' : 'False',\n  estado: vigenciaOk ? 'REGISTRADO' : 'RECHAZADO_VIGENCIA',\n  fecha_registro: $now.toISO(),\n  vigenciaOk: vigenciaOk,\n  mensaje: vigenciaOk ? MSG_EXITO : MSG_VIGENCIA\n} }];"
+        },
+        "id": "2fe3d0c9-1cf2-4264-85c3-02f9906f0b56",
+        "name": "Build Registration Record",
+        "type": "n8n-nodes-base.code",
+        "typeVersion": 2,
+        "position": [
+          832,
+          608
+        ]
+      },
+      {
+        "parameters": {
+          "operation": "append",
+          "documentId": {
+            "__rl": true,
+            "value": "1JJqisxE-f-2Tn4tebOL-GvANbTaCY9_HCgfJ4wyktsM",
+            "mode": "list",
+            "cachedResultName": "Registro JMJ Corea 2027",
+            "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JJqisxE-f-2Tn4tebOL-GvANbTaCY9_HCgfJ4wyktsM/edit?usp=drivesdk"
+          },
+          "sheetName": {
+            "__rl": true,
+            "value": "gid=0",
+            "mode": "list",
+            "cachedResultName": "Hoja 1",
+            "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JJqisxE-f-2Tn4tebOL-GvANbTaCY9_HCgfJ4wyktsM/edit#gid=0"
+          },
+          "columns": {
+            "mappingMode": "defineBelow",
+            "value": {
+              "Nacionalidad": "={{ $json.nacionalidad }}",
+              "Apellidos": "={{ $json.apellidos }}",
+              "Numero de pasaporte": "={{ $json.numero_pasaporte }}",
+              "Nombre(S)": "={{ $json.nombre }}",
+              "Sexo": "={{ $json.sexo }}",
+              "Fecha de nacimiento": "={{ $json.fecha_nacimiento }}",
+              "Expiracion del pasaporte": "={{ $json.fecha_vencimiento }}",
+              "Telefono": "={{ $json.numero }}",
+              "Pasaporte valido para viajar": "={{ $json.vigenciaOk }}",
+              "createdAt": "={{ $json.fecha_registro }}",
+              "updatedAt": "={{ $now.toISO() }}",
+              "ID": "==ROW()-1"
+            },
+            "matchingColumns": [
+              "ID"
+            ],
+            "schema": [
+              {
+                "id": "ID",
+                "displayName": "ID",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true,
+                "removed": false
+              },
+              {
+                "id": "Nacionalidad",
+                "displayName": "Nacionalidad",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "Numero de pasaporte",
+                "displayName": "Numero de pasaporte",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true,
+                "removed": false
+              },
+              {
+                "id": "Apellidos",
+                "displayName": "Apellidos",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "Nombre(S)",
+                "displayName": "Nombre(S)",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "Sexo",
+                "displayName": "Sexo",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "Fecha de nacimiento",
+                "displayName": "Fecha de nacimiento",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "Telefono",
+                "displayName": "Telefono",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true,
+                "removed": false
+              },
+              {
+                "id": "Expiracion del pasaporte",
+                "displayName": "Expiracion del pasaporte",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "Pasaporte valido para viajar",
+                "displayName": "Pasaporte valido para viajar",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "createdAt",
+                "displayName": "createdAt",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "updatedAt",
+                "displayName": "updatedAt",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              }
+            ],
+            "attemptToConvertTypes": false,
+            "convertFieldsToString": false
+          },
+          "options": {}
+        },
+        "id": "cbc47933-216b-4095-9b75-247d76dbdc68",
+        "name": "Append row in sheet",
+        "type": "n8n-nodes-base.googleSheets",
+        "typeVersion": 4.7,
+        "position": [
+          1040,
+          608
+        ],
+        "retryOnFail": true,
+        "onError": "continueRegularOutput"
+      },
+      {
+        "parameters": {
+          "resource": "custom",
+          "customResource": "jmj.passenger",
+          "fieldsToCreateOrUpdate": {
+            "fields": [
+              {
+                "fieldName": "first_name",
+                "fieldValue": "={{ $('Build Registration Record').item.json.nombre }}"
+              },
+              {
+                "fieldName": "last_name",
+                "fieldValue": "={{ $('Build Registration Record').item.json.apellidos }}"
+              },
+              {
+                "fieldName": "birth_date",
+                "fieldValue": "={{ $('Build Registration Record').item.json.fecha_nacimiento }}"
+              },
+              {
+                "fieldName": "phone",
+                "fieldValue": "={{ $('Build Registration Record').item.json.numero }}"
+              },
+              {
+                "fieldName": "passport_number",
+                "fieldValue": "={{ $('Build Registration Record').item.json.numero_pasaporte }}"
+              },
+              {
+                "fieldName": "passport_expiry_date",
+                "fieldValue": "={{ $('Build Registration Record').item.json.fecha_vencimiento }}"
+              },
+              {
+                "fieldName": "is_passport_valid",
+                "fieldValue": "={{ $('Build Registration Record').item.json.is_exporation_date_valid }}"
+              },
+              {
+                "fieldName": "whatsapp_bot_id",
+                "fieldValue": "={{ $('Evolution Webhook').item.json.body.sender }}"
+              },
+              {
+                "fieldName": "passport_country_id",
+                "fieldValue": "={{ $('Build Registration Record').item.json.nacionalidad }}"
+              },
+              {
+                "fieldName": "gender",
+                "fieldValue": "={{ $('Build Registration Record').item.json.sexo }}"
+              }
+            ]
+          }
+        },
+        "id": "42aa31e4-34de-41dc-ae79-4338627ea402",
+        "name": "Create an item",
+        "type": "n8n-nodes-base.odoo",
+        "typeVersion": 1,
+        "position": [
+          1248,
+          608
+        ]
+      },
+      {
+        "parameters": {
+          "operation": "upsert",
+          "dataTableId": {
+            "__rl": true,
+            "mode": "list",
+            "value": "OEU5X89bpPWLhzNB",
+            "cachedResultName": "registro_peregrinos"
+          },
+          "matchType": "allConditions",
+          "filters": {
+            "conditions": [
+              {
+                "keyName": "remote_jid",
+                "keyValue": "={{ $(\"Build Registration Record\").first().json.remote_jid }}"
+              }
+            ]
+          },
+          "columns": {
+            "mappingMode": "defineBelow",
+            "value": {
+              "remote_jid": "={{ $(\"Build Registration Record\").first().json.remote_jid }}",
+              "estado": "={{ $(\"Build Registration Record\").first().json.estado }}",
+              "is_exporation_date_valid": "={{ $(\"Build Registration Record\").first().json.is_exporation_date_valid }}",
+              "actualizado": "={{ $now.toISO() }}"
+            },
+            "matchingColumns": [],
+            "schema": [
+              {
+                "id": "remote_jid",
+                "displayName": "remote_jid",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "estado",
+                "displayName": "estado",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "nombre",
+                "displayName": "nombre",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "apellidos",
+                "displayName": "apellidos",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "numero_pasaporte",
+                "displayName": "numero_pasaporte",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "nacionalidad",
+                "displayName": "nacionalidad",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "sexo",
+                "displayName": "sexo",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "fecha_nacimiento",
+                "displayName": "fecha_nacimiento",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "fecha_vencimiento",
+                "displayName": "fecha_vencimiento",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "pais_emisor",
+                "displayName": "pais_emisor",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "numero_personal",
+                "displayName": "numero_personal",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "actualizado",
+                "displayName": "actualizado",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "is_exporation_date_valid",
+                "displayName": "is_exporation_date_valid",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              }
+            ],
+            "attemptToConvertTypes": false,
+            "convertFieldsToString": false
+          },
+          "options": {}
+        },
+        "id": "ca0ffc4c-71a8-43ce-b725-0766e66856c0",
+        "name": "Mark As Registered",
+        "type": "n8n-nodes-base.dataTable",
+        "typeVersion": 1.1,
+        "position": [
+          1456,
+          608
+        ]
+      },
+      {
+        "parameters": {
+          "method": "POST",
+          "url": "={{ $(\"Evolution Webhook\").item.json.body.server_url }}/message/sendText/{{ $(\"Set Config\").first().json.evolutionInstance }}",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "apikey",
+                "value": "={{ $(\"Evolution Webhook\").item.json.body.apikey }}"
+              }
+            ]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={{ JSON.stringify({ number: $(\"Build Registration Record\").first().json.numero, text: $(\"Build Registration Record\").first().json.mensaje, delay: 900 }) }}",
+          "options": {
+            "timeout": 30000
+          }
+        },
+        "id": "428d9480-6656-4b44-a7a7-5e2598c8042a",
+        "name": "Send Registration Success",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.4,
+        "position": [
+          1664,
+          608
+        ],
+        "retryOnFail": true
+      },
+      {
+        "parameters": {
+          "method": "POST",
+          "url": "={{ $(\"Evolution Webhook\").item.json.body.server_url }}/message/sendText/{{ $(\"Set Config\").first().json.evolutionInstance }}",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "apikey",
+                "value": "={{ $(\"Evolution Webhook\").item.json.body.apikey }}"
+              }
+            ]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={{ JSON.stringify({ number: $json.numero, text: $json.mensaje, delay: 900 }) }}",
+          "options": {
+            "timeout": 30000
+          }
+        },
+        "id": "09e879a2-9271-40e0-9088-ff24ac9af88c",
+        "name": "Send Retry Photo Request",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.4,
+        "position": [
+          816,
+          832
+        ],
+        "retryOnFail": true
+      },
+      {
+        "parameters": {
+          "operation": "upsert",
+          "dataTableId": {
+            "__rl": true,
+            "mode": "list",
+            "value": "OEU5X89bpPWLhzNB",
+            "cachedResultName": "registro_peregrinos"
+          },
+          "matchType": "allConditions",
+          "filters": {
+            "conditions": [
+              {
+                "keyName": "remote_jid",
+                "keyValue": "={{ $(\"Classify Route\").first().json.remoteJid }}"
+              }
+            ]
+          },
+          "columns": {
+            "mappingMode": "defineBelow",
+            "value": {
+              "remote_jid": "={{ $(\"Classify Route\").first().json.remoteJid }}",
+              "estado": "ESPERANDO_FOTO",
+              "actualizado": "={{ $now.toISO() }}"
+            },
+            "matchingColumns": [],
+            "schema": [
+              {
+                "id": "remote_jid",
+                "displayName": "remote_jid",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "estado",
+                "displayName": "estado",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "nombre",
+                "displayName": "nombre",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "apellidos",
+                "displayName": "apellidos",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "numero_pasaporte",
+                "displayName": "numero_pasaporte",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "nacionalidad",
+                "displayName": "nacionalidad",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "sexo",
+                "displayName": "sexo",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "fecha_nacimiento",
+                "displayName": "fecha_nacimiento",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "fecha_vencimiento",
+                "displayName": "fecha_vencimiento",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "pais_emisor",
+                "displayName": "pais_emisor",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "numero_personal",
+                "displayName": "numero_personal",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "actualizado",
+                "displayName": "actualizado",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "is_exporation_date_valid",
+                "displayName": "is_exporation_date_valid",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              }
+            ],
+            "attemptToConvertTypes": false,
+            "convertFieldsToString": false
+          },
+          "options": {}
+        },
+        "id": "5b70ba4d-47bd-40f8-8de9-39c90cc6eb9f",
+        "name": "Set State Retry Photo",
+        "type": "n8n-nodes-base.dataTable",
+        "typeVersion": 1.1,
+        "position": [
+          992,
+          832
+        ]
+      },
+      {
+        "parameters": {
+          "method": "POST",
+          "url": "={{ $(\"Evolution Webhook\").item.json.body.server_url }}/message/sendText/{{ $(\"Set Config\").first().json.evolutionInstance }}",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "apikey",
+                "value": "={{ $(\"Evolution Webhook\").item.json.body.apikey }}"
+              }
+            ]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={{ JSON.stringify({ number: $json.numero, text: $json.mensaje, delay: 900 }) }}",
+          "options": {
+            "timeout": 30000
+          }
+        },
+        "id": "3758f9aa-e934-4c11-a131-3f134ce7e8f2",
+        "name": "Send Welcome Message",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.4,
+        "position": [
+          800,
+          1040
+        ],
+        "retryOnFail": true
+      },
+      {
+        "parameters": {
+          "operation": "upsert",
+          "dataTableId": {
+            "__rl": true,
+            "mode": "list",
+            "value": "OEU5X89bpPWLhzNB",
+            "cachedResultName": "registro_peregrinos"
+          },
+          "matchType": "allConditions",
+          "filters": {
+            "conditions": [
+              {
+                "keyName": "remote_jid",
+                "keyValue": "={{ $(\"Classify Route\").first().json.remoteJid }}"
+              }
+            ]
+          },
+          "columns": {
+            "mappingMode": "defineBelow",
+            "value": {
+              "remote_jid": "={{ $(\"Classify Route\").first().json.remoteJid }}",
+              "estado": "ESPERANDO_PALABRA",
+              "actualizado": "={{ $now.toISO() }}"
+            },
+            "matchingColumns": [],
+            "schema": []
+          },
+          "options": {}
+        },
+        "id": "57dc561b-3b03-44f7-894a-2d723098dada",
+        "name": "Set State Awaiting Keyword",
+        "type": "n8n-nodes-base.dataTable",
+        "typeVersion": 1.1,
+        "position": [
+          992,
+          1040
+        ]
+      },
+      {
+        "parameters": {
+          "jsCode": "const ctx = $json;\nconst fila = $('Get Session').first().json || {};\nconst estado = ctx.estadoActual || 'NUEVO';\nconst raw = String(ctx.texto || '').trim();\n\n// Mensajes\nconst MSG_NOMBRE = 'De acuerdo, haremos su registro sin pasaporte.\\n\\nPor favor escriba su *nombre completo* (nombres y apellidos), tal como aparecera en su pasaporte.';\nconst MSG_NOMBRE_ERROR = 'No pudimos leer su nombre. Por favor escriba su *nombre completo*: nombres y apellidos, por ejemplo: Juan Perez Lopez.';\nconst MSG_NACIMIENTO = 'Gracias. Ahora escriba su *fecha de nacimiento* en formato DD/MM/AAAA (por ejemplo: 05/03/1998).';\nconst MSG_NACIMIENTO_ERROR = 'Esa fecha no es valida. Por favor escriba su *fecha de nacimiento* en formato DD/MM/AAAA (por ejemplo: 05/03/1998).';\nconst MSG_CURP = 'Gracias. Ahora escriba su *CURP* o si no tiene, escribir N/A';\nconst MSG_CURP_ERROR = 'El formato no parece correcto. Por favor escriba su *CURP* de 18 caracteres, o escriba *N/A* si no cuenta con uno.';\nconst MSG_SEXO = 'Por ultimo, escriba su *sexo*: responda *M* para masculino o *F* para femenino.';\nconst MSG_SEXO_ERROR = 'No entendimos su respuesta. Responda *M* para masculino o *F* para femenino.';\nconst MSG_EXITO = 'Registro exitoso, sin embargo recuerda que necesitas tramitar tu pasaporte a tiempo para el viaje';\n\n// Variables\nlet nombre = fila.nombre || '';\nlet apellidos = fila.apellidos || '';\nlet fechaNacimiento = fila.fecha_nacimiento || '';\nlet curp = fila.curp_o_ine || '';\nlet sexo = fila.sexo || '';\n\nlet nuevoEstado = 'SP_ESPERANDO_NOMBRE';\nlet mensaje = MSG_NOMBRE;\nlet completo = false;\n\nif (estado === 'SP_ESPERANDO_NOMBRE') {\n  const partes = raw.split(/\\s+/).filter(function (p) { return p.length > 0; });\n  if (partes.length < 2) {\n    nuevoEstado = 'SP_ESPERANDO_NOMBRE';\n    mensaje = MSG_NOMBRE_ERROR;\n  } else {\n    const corte = partes.length >= 4 ? 2 : 1;\n    nombre = partes.slice(0, corte).join(' ');\n    apellidos = partes.slice(corte).join(' ');\n    nuevoEstado = 'SP_ESPERANDO_NACIMIENTO';\n    mensaje = MSG_NACIMIENTO;\n  }\n} else if (estado === 'SP_ESPERANDO_NACIMIENTO') {\n  const m = raw.match(/^(\\d{1,2})\\s*[\\/\\-\\.]\\s*(\\d{1,2})\\s*[\\/\\-\\.]\\s*(\\d{4})$/);\n  let valida = false;\n  if (m) {\n    const d = parseInt(m[1], 10);\n    const mo = parseInt(m[2], 10);\n    const y = parseInt(m[3], 10);\n    const f = new Date(Date.UTC(y, mo - 1, d));\n    valida = y >= 1900 && y <= new Date().getUTCFullYear() && mo >= 1 && mo <= 12 && f.getUTCDate() === d && (f.getUTCMonth() + 1) === mo;\n    if (valida) {\n      fechaNacimiento = y + '-' + ('0' + mo).slice(-2) + '-' + ('0' + d).slice(-2);\n    }\n  }\n  \n  if (valida) {\n    nuevoEstado = 'SP_ESPERANDO_CURP'; // Redirige al estado del CURP\n    mensaje = MSG_CURP;\n  } else {\n    nuevoEstado = 'SP_ESPERANDO_NACIMIENTO';\n    mensaje = MSG_NACIMIENTO_ERROR;\n  }\n} else if (estado === 'SP_ESPERANDO_CURP') {\n  // Limpiar la entrada y volverla may\u00fasculas para facilitar validaci\u00f3n\n  const inputCurp = raw.toUpperCase().trim();\n  \n  if (inputCurp === 'N/A' || inputCurp === 'NA' || inputCurp === 'NO') {\n    curp = 'N/A';\n    nuevoEstado = 'SP_ESPERANDO_SEXO';\n    mensaje = MSG_SEXO;\n  } else {\n    // Validar formato CURP eliminando espacios extra (4 letras, 6 n\u00fameros, 6 letras, 1 alfanum\u00e9rico, 1 n\u00famero)\n    const curpTest = inputCurp.replace(/\\s+/g, '');\n    const regexCurp = /^[A-Z]{4}\\d{6}[A-Z]{6}[A-Z0-9]\\d$/;\n    \n    if (regexCurp.test(curpTest)) {\n      curp = curpTest;\n      nuevoEstado = 'SP_ESPERANDO_SEXO';\n      mensaje = MSG_SEXO;\n    } else {\n      nuevoEstado = 'SP_ESPERANDO_CURP';\n      mensaje = MSG_CURP_ERROR;\n    }\n  }\n} else if (estado === 'SP_ESPERANDO_SEXO') {\n  const s = raw.normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase().replace(/[^a-z]/g, '');\n  let leido = '';\n  \n  if (s === 'm' || s === 'h' || s === 'masculino' || s === 'hombre') {\n    leido = 'M';\n  } else if (s === 'f' || s === 'femenino' || s === 'mujer') {\n    leido = 'F';\n  }\n  \n  if (leido) {\n    sexo = leido;\n    nuevoEstado = 'REGISTRADO_SIN_PASAPORTE';\n    mensaje = MSG_EXITO;\n    completo = true;\n  } else {\n    nuevoEstado = 'SP_ESPERANDO_SEXO';\n    mensaje = MSG_SEXO_ERROR;\n  }\n} else {\n  nuevoEstado = 'SP_ESPERANDO_NOMBRE';\n  mensaje = MSG_NOMBRE;\n  nombre = '';\n  apellidos = '';\n  fechaNacimiento = '';\n  curp = ''; // Resetear CURP\n  sexo = '';\n}\n\nreturn [{ \n  json: { \n    remote_jid: ctx.remoteJid, \n    numero: ctx.numero, \n    nombre: nombre, \n    apellidos: apellidos, \n    fecha_nacimiento: fechaNacimiento, \n    curp_o_ine: curp, \n    sexo: sexo, \n    estado: nuevoEstado, \n    mensaje: mensaje, \n    completo: completo, \n    fecha_registro: $now.toISO() \n  } \n}];"
+        },
+        "id": "3c8d68d3-db3c-4394-8605-26dcbc7fd23b",
+        "name": "Build No Passport Step",
+        "type": "n8n-nodes-base.code",
+        "typeVersion": 2,
+        "position": [
+          816,
+          1424
+        ]
+      },
+      {
+        "parameters": {
+          "operation": "upsert",
+          "dataTableId": {
+            "__rl": true,
+            "mode": "list",
+            "value": "OEU5X89bpPWLhzNB",
+            "cachedResultName": "registro_peregrinos"
+          },
+          "matchType": "allConditions",
+          "filters": {
+            "conditions": [
+              {
+                "keyName": "remote_jid",
+                "keyValue": "={{ $json.remote_jid }}"
+              }
+            ]
+          },
+          "columns": {
+            "mappingMode": "defineBelow",
+            "value": {
+              "remote_jid": "={{ $json.remote_jid }}",
+              "estado": "={{ $json.estado }}",
+              "nombre": "={{ $json.nombre }}",
+              "apellidos": "={{ $json.apellidos }}",
+              "fecha_nacimiento": "={{ $json.fecha_nacimiento }}",
+              "sexo": "={{ $json.sexo }}",
+              "actualizado": "={{ $now.toISO() }}",
+              "curp_o_ine": "={{ $json.curp_o_ine }}"
+            },
+            "matchingColumns": [],
+            "schema": [
+              {
+                "id": "remote_jid",
+                "displayName": "remote_jid",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "estado",
+                "displayName": "estado",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "nombre",
+                "displayName": "nombre",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "apellidos",
+                "displayName": "apellidos",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "numero_pasaporte",
+                "displayName": "numero_pasaporte",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "nacionalidad",
+                "displayName": "nacionalidad",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "sexo",
+                "displayName": "sexo",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "fecha_nacimiento",
+                "displayName": "fecha_nacimiento",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "fecha_vencimiento",
+                "displayName": "fecha_vencimiento",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "pais_emisor",
+                "displayName": "pais_emisor",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "numero_personal",
+                "displayName": "numero_personal",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "actualizado",
+                "displayName": "actualizado",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "is_exporation_date_valid",
+                "displayName": "is_exporation_date_valid",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "curp_o_ine",
+                "displayName": "curp_o_ine",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              },
+              {
+                "id": "origen",
+                "displayName": "origen",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "readOnly": false,
+                "removed": false
+              }
+            ],
+            "attemptToConvertTypes": false,
+            "convertFieldsToString": false
+          },
+          "options": {}
+        },
+        "id": "d8009b97-9f73-4221-a6d3-03f3109a5903",
+        "name": "Save No Passport Progress",
+        "type": "n8n-nodes-base.dataTable",
+        "typeVersion": 1.1,
+        "position": [
+          1024,
+          1424
+        ]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "strict",
+              "version": 3
+            },
+            "conditions": [
+              {
+                "id": "spdone",
+                "leftValue": "={{ $(\"Build No Passport Step\").first().json.completo }}",
+                "rightValue": true,
+                "operator": {
+                  "type": "boolean",
+                  "operation": "true",
+                  "singleValue": true
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "id": "ce081870-0655-45eb-8224-771cb5746239",
+        "name": "Is No Passport Complete",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2.3,
+        "position": [
+          1248,
+          1424
+        ]
+      },
+      {
+        "parameters": {
+          "operation": "append",
+          "documentId": {
+            "__rl": true,
+            "value": "1JJqisxE-f-2Tn4tebOL-GvANbTaCY9_HCgfJ4wyktsM",
+            "mode": "list",
+            "cachedResultName": "Registro JMJ Corea 2027",
+            "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JJqisxE-f-2Tn4tebOL-GvANbTaCY9_HCgfJ4wyktsM/edit?usp=drivesdk"
+          },
+          "sheetName": {
+            "__rl": true,
+            "value": "gid=0",
+            "mode": "list",
+            "cachedResultName": "Hoja 1",
+            "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JJqisxE-f-2Tn4tebOL-GvANbTaCY9_HCgfJ4wyktsM/edit#gid=0"
+          },
+          "columns": {
+            "mappingMode": "defineBelow",
+            "value": {
+              "Apellidos": "={{ $(\"Build No Passport Step\").first().json.apellidos }}",
+              "Nombre(S)": "={{ $(\"Build No Passport Step\").first().json.nombre }}",
+              "Sexo": "={{ $(\"Build No Passport Step\").first().json.sexo }}",
+              "Fecha de nacimiento": "={{ $(\"Build No Passport Step\").first().json.fecha_nacimiento }}",
+              "Telefono": "={{ $(\"Build No Passport Step\").first().json.numero }}",
+              "Pasaporte valido para viajar": "SIN PASAPORTE",
+              "createdAt": "={{ $(\"Build No Passport Step\").first().json.fecha_registro }}",
+              "updatedAt": "={{ $now.toISO() }}",
+              "ID": "==ROW()-1",
+              "curp": "={{ $('Build No Passport Step').item.json.curp_o_ine }}"
+            },
+            "matchingColumns": [
+              "ID"
+            ],
+            "schema": [
+              {
+                "id": "ID",
+                "displayName": "ID",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true,
+                "removed": false
+              },
+              {
+                "id": "Nacionalidad",
+                "displayName": "Nacionalidad",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "Numero de pasaporte",
+                "displayName": "Numero de pasaporte",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true,
+                "removed": false
+              },
+              {
+                "id": "Apellidos",
+                "displayName": "Apellidos",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "Nombre(S)",
+                "displayName": "Nombre(S)",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "Sexo",
+                "displayName": "Sexo",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "Fecha de nacimiento",
+                "displayName": "Fecha de nacimiento",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "Telefono",
+                "displayName": "Telefono",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true,
+                "removed": false
+              },
+              {
+                "id": "Expiracion del pasaporte",
+                "displayName": "Expiracion del pasaporte",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "Pasaporte valido para viajar",
+                "displayName": "Pasaporte valido para viajar",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "createdAt",
+                "displayName": "createdAt",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "updatedAt",
+                "displayName": "updatedAt",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "curp",
+                "displayName": "curp",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true,
+                "removed": false
+              }
+            ],
+            "attemptToConvertTypes": false,
+            "convertFieldsToString": false
+          },
+          "options": {}
+        },
+        "id": "81279acf-aec9-4b59-9360-cbfe081ce180",
+        "name": "Append No Passport Row",
+        "type": "n8n-nodes-base.googleSheets",
+        "typeVersion": 4.7,
+        "position": [
+          1472,
+          1376
+        ],
+        "retryOnFail": true,
+        "onError": "continueRegularOutput"
+      },
+      {
+        "parameters": {
+          "resource": "custom",
+          "customResource": "jmj.passenger",
+          "fieldsToCreateOrUpdate": {
+            "fields": [
+              {
+                "fieldName": "first_name",
+                "fieldValue": "={{ $('Build No Passport Step').item.json.nombre }}"
+              },
+              {
+                "fieldName": "last_name",
+                "fieldValue": "={{ $('Build No Passport Step').item.json.apellidos }}"
+              },
+              {
+                "fieldName": "birth_date",
+                "fieldValue": "={{ $('Build No Passport Step').item.json.fecha_nacimiento }}"
+              },
+              {
+                "fieldName": "phone",
+                "fieldValue": "={{ $('Build No Passport Step').item.json.numero }}"
+              },
+              {
+                "fieldName": "is_passport_valid",
+                "fieldValue": "False"
+              },
+              {
+                "fieldName": "whatsapp_bot_id",
+                "fieldValue": "={{ $('Evolution Webhook').item.json.body.sender }}"
+              },
+              {
+                "fieldName": "gender",
+                "fieldValue": "={{ $('Build No Passport Step').item.json.sexo }}"
+              },
+              {
+                "fieldName": "curp",
+                "fieldValue": "={{ $('Build No Passport Step').item.json.curp_o_ine }}"
+              }
+            ]
+          }
+        },
+        "id": "07ae0a1b-87d2-4655-81f6-2f8b9da879f4",
+        "name": "Create No Passport Item",
+        "type": "n8n-nodes-base.odoo",
+        "typeVersion": 1,
+        "position": [
+          1664,
+          1376
+        ],
+        "retryOnFail": true
+      },
+      {
+        "parameters": {
+          "method": "POST",
+          "url": "={{ $(\"Evolution Webhook\").item.json.body.server_url }}/message/sendText/{{ $(\"Set Config\").first().json.evolutionInstance }}",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "apikey",
+                "value": "={{ $(\"Evolution Webhook\").item.json.body.apikey }}"
+              }
+            ]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={{ JSON.stringify({ number: $(\"Build No Passport Step\").first().json.numero, text: $(\"Build No Passport Step\").first().json.mensaje, delay: 900 }) }}",
+          "options": {
+            "timeout": 30000
+          }
+        },
+        "id": "bec99f4d-38ea-4769-81d9-deacf482b5ae",
+        "name": "Send No Passport Success",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.4,
+        "position": [
+          1872,
+          1376
+        ],
+        "retryOnFail": true
+      },
+      {
+        "parameters": {
+          "method": "POST",
+          "url": "={{ $(\"Evolution Webhook\").item.json.body.server_url }}/message/sendText/{{ $(\"Set Config\").first().json.evolutionInstance }}",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "apikey",
+                "value": "={{ $(\"Evolution Webhook\").item.json.body.apikey }}"
+              }
+            ]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={{ JSON.stringify({ number: $(\"Build No Passport Step\").first().json.numero, text: $(\"Build No Passport Step\").first().json.mensaje, delay: 900 }) }}",
+          "options": {
+            "timeout": 30000
+          }
+        },
+        "id": "9f375b5f-4162-4580-98e5-13399ac77c31",
+        "name": "Send No Passport Prompt",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.4,
+        "position": [
+          1472,
+          1552
+        ],
+        "retryOnFail": true
+      },
+      {
+        "parameters": {
+          "content": "## Registro de peregrinos por WhatsApp\n\nLa URL del servidor y la apikey se toman del propio payload de Evolution (`body.server_url`, `body.apikey`).\n\nEn **Set Config** solo se edita la URL del OCR y la imagen de ejemplo del pasaporte.\n\nWebhook registrado en Evolution escuchando unicamente `MESSAGES_UPSERT`.",
+          "height": 344,
+          "width": 636,
+          "color": 4
+        },
+        "id": "35c32ff9-53b5-4737-ac89-ee223a93142e",
+        "name": "Sticky Note 4dc05418",
+        "type": "n8n-nodes-base.stickyNote",
+        "typeVersion": 1,
+        "position": [
+          -1024,
+          384
+        ]
+      },
+      {
+        "parameters": {
+          "content": "## Maquina de estados\n\nEl bot esta MUDO hasta que llega una frase de activacion, por ejemplo:\n**\"Quiero registrarme para la JMJ Corea 2027\"**, **\"Quiero registrarme para Corea 2027\"**, **\"Quiero registrarme para la JMJ\"**, **\"Quiero registrarme para la JMJ de Seul 2027\"** (se ignoran mayusculas, acentos y puntuacion; ver la lista y el regex en **Classify Route**).\n\nCON PASAPORTE: NUEVO --frase--> ESPERANDO_PALABRA --\"Pasaporte\"--> ESPERANDO_FOTO --foto legible--> ESPERANDO_CONFIRMACION --\"OK\"--> REGISTRADO / RECHAZADO_VIGENCIA\n\nSIN PASAPORTE: ESPERANDO_PALABRA --\"Sin pasaporte\"--> SP_ESPERANDO_NOMBRE --> SP_ESPERANDO_NACIMIENTO --> SP_ESPERANDO_SEXO --> REGISTRADO_SIN_PASAPORTE\n\nCualquier mensaje que no encaje en una ruta cae en el fallback del Switch y NO produce respuesta. Por eso el WhatsApp se puede seguir usando normal.",
+          "height": 456,
+          "width": 924,
+          "color": 5
+        },
+        "id": "8f93ad1f-a44a-439b-8271-4e3ff03d9c1f",
+        "name": "Sticky Note 666b3137",
+        "type": "n8n-nodes-base.stickyNote",
+        "typeVersion": 1,
+        "position": [
+          -336,
+          272
+        ]
+      },
+      {
+        "parameters": {
+          "content": "## Lectura del pasaporte\n\nEvolution entrega la imagen en base64 -> se convierte a binario -> se sube como `file` (multipart) al OCR API Gateway.\n\nSe acepta el resultado solo si el MRZ existe y `checksum_valid` es true.",
+          "height": 312,
+          "width": 892,
+          "color": 3
+        },
+        "id": "b65ed744-d456-4d65-b69e-a43f1a7d41e8",
+        "name": "Sticky Note e1c2a1c7",
+        "type": "n8n-nodes-base.stickyNote",
+        "typeVersion": 1,
+        "position": [
+          784,
+          96
+        ]
+      },
+      {
+        "parameters": {
+          "content": "## Regla de vigencia\n\nAl confirmar con OK se compara `fecha_vencimiento` (del MRZ) contra **2028-03-01**.\n\nVence el 2028-03-01 o despues -> `is_exporation_date_valid = True`, estado `REGISTRADO`, mensaje de felicitacion.\n\nVence antes (o la fecha no es legible) -> `is_exporation_date_valid = False`, estado `RECHAZADO_VIGENCIA`, mensaje de advertencia. **El registro se guarda igual** en la Data Table y en el Google Sheet.",
+          "height": 328,
+          "width": 996,
+          "color": 6
+        },
+        "id": "3d399a13-2b7b-4fc1-857a-fc878617854c",
+        "name": "Sticky Note 7b77c00d",
+        "type": "n8n-nodes-base.stickyNote",
+        "typeVersion": 1,
+        "position": [
+          784,
+          432
+        ]
+      },
+      {
+        "parameters": {
+          "content": "## Registro SIN pasaporte\n\nSe activa con la opcion **\"Sin pasaporte\"**. Como no hay MRZ, los datos se piden por chat en tres pasos: nombre completo -> fecha de nacimiento (DD/MM/AAAA) -> sexo (M/F).\n\nCada respuesta valida avanza el estado y se guarda en la Data Table. Si la respuesta no es valida se vuelve a pedir el mismo dato.\n\nAl completar los tres pasos se escribe en Google Sheets y en Odoo (`jmj.passenger`, sin numero ni vigencia de pasaporte) y se envia el mensaje de registro exitoso con el recordatorio de tramitar el pasaporte.",
+          "height": 500,
+          "width": 1300,
+          "color": 7
+        },
+        "id": "e8b202b6-ca79-4381-b060-8bc16a3c449f",
+        "name": "Sticky Note Sin Pasaporte",
+        "type": "n8n-nodes-base.stickyNote",
+        "typeVersion": 1,
+        "position": [
+          768,
+          1216
+        ]
+      }
+    ],
+    "connections": {
+      "Evolution Webhook": {
+        "main": [
+          [
+            {
+              "node": "Set Config",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Set Config": {
+        "main": [
+          [
+            {
+              "node": "Normalize Evolution Event",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Normalize Evolution Event": {
+        "main": [
+          [
+            {
+              "node": "Is Client Message",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Is Client Message": {
+        "main": [
+          [
+            {
+              "node": "Get Session",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Get Session": {
+        "main": [
+          [
+            {
+              "node": "Classify Route",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Classify Route": {
+        "main": [
+          [
+            {
+              "node": "Route By Intent",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Route By Intent": {
+        "main": [
+          [
+            {
+              "node": "Send Passport Instructions",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "Fetch Image Base64",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "Build Registration Record",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "Send Retry Photo Request",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "Send Welcome Message",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "Build No Passport Step",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Send Passport Instructions": {
+        "main": [
+          [
+            {
+              "node": "Set State Awaiting Photo",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Fetch Image Base64": {
+        "main": [
+          [
+            {
+              "node": "Convert Base64 To Image",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Convert Base64 To Image": {
+        "main": [
+          [
+            {
+              "node": "Extract Passport Data",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Extract Passport Data": {
+        "main": [
+          [
+            {
+              "node": "Build Passport Summary",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Build Passport Summary": {
+        "main": [
+          [
+            {
+              "node": "Is Passport Valid",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Is Passport Valid": {
+        "main": [
+          [
+            {
+              "node": "Save Passport Data",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "Send Passport Read Error",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Save Passport Data": {
+        "main": [
+          [
+            {
+              "node": "Send Data For Confirmation",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Send Passport Read Error": {
+        "main": [
+          [
+            {
+              "node": "Reset State To Awaiting Photo",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Build Registration Record": {
+        "main": [
+          [
+            {
+              "node": "Append row in sheet",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Append row in sheet": {
+        "main": [
+          [
+            {
+              "node": "Create an item",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Create an item": {
+        "main": [
+          [
+            {
+              "node": "Mark As Registered",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Mark As Registered": {
+        "main": [
+          [
+            {
+              "node": "Send Registration Success",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Send Retry Photo Request": {
+        "main": [
+          [
+            {
+              "node": "Set State Retry Photo",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Send Welcome Message": {
+        "main": [
+          [
+            {
+              "node": "Set State Awaiting Keyword",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Build No Passport Step": {
+        "main": [
+          [
+            {
+              "node": "Save No Passport Progress",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Save No Passport Progress": {
+        "main": [
+          [
+            {
+              "node": "Is No Passport Complete",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Is No Passport Complete": {
+        "main": [
+          [
+            {
+              "node": "Append No Passport Row",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "Send No Passport Prompt",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Append No Passport Row": {
+        "main": [
+          [
+            {
+              "node": "Create No Passport Item",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Create No Passport Item": {
+        "main": [
+          [
+            {
+              "node": "Send No Passport Success",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "tags": [],
+  "meta": {
+    "aiBuilderAssisted": true
+  },
+  "parentFolderId": null,
+  "description": "Bot de WhatsApp para registro de peregrinos JMJ Corea 2027. Registro con pasaporte (OCR del MRZ, adjunta la foto como documento en Odoo) o sin pasaporte. Guarda en Data Table, Google Sheets y Odoo, y envia el enlace del formulario web al terminar.",
+  "scopes": [
+    "workflow:create",
+    "workflow:delete",
+    "workflow:execute",
+    "workflow:execute-chat",
+    "workflow:list",
+    "workflow:move",
+    "workflow:publish",
+    "workflow:read",
+    "workflow:share",
+    "workflow:unpublish",
+    "workflow:unshare",
+    "workflow:update",
+    "workflow:updateRedactionSetting"
+  ],
+  "canExecute": true
+}

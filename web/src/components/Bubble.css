@@ -1,0 +1,80 @@
+.bubble-wrapper {
+  display: flex;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.bubble-wrapper.bot {
+  justify-content: flex-start;
+}
+
+.bubble-wrapper.persona {
+  justify-content: flex-end;
+}
+
+.bubble {
+  max-width: 78%;
+  padding: 12px 16px;
+  border-radius: 18px;
+  position: relative;
+  word-wrap: break-word;
+  animation: slideIn 140ms ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bubble-wrapper.bot .bubble {
+  background-color: var(--celadon);
+  color: var(--tinta);
+  border-bottom-left-radius: 4px;
+}
+
+.bubble-wrapper.persona .bubble {
+  background-color: var(--tinta);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.bubble-text {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.bubble-text a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.bubble-time {
+  display: block;
+  font-size: 13px;
+  margin-top: 4px;
+  text-align: right;
+  opacity: 0.7;
+}
+
+.bubble-image {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.bubble-pdf {
+  display: inline-block;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: inherit;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
