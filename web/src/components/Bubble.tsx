@@ -1,5 +1,6 @@
 import type { Message } from '../api';
 import { PhotoView } from 'react-photo-view';
+import { FormattedText } from './FormattedText';
 import './Bubble.css';
 
 interface BubbleProps {
@@ -32,23 +33,12 @@ export function Bubble({ message }: BubbleProps) {
     return null;
   };
 
-  // Convert URLs to links and handle basic text formatting
+  // Convert URLs to links and handle WhatsApp formatting (*bold*, _italic_)
   const renderText = () => {
     if (!message.text) return null;
-    const urlRegex = /(https?:\/\/[^\s]+)/g;
-    const parts = message.text.split(urlRegex);
     return (
       <p className="bubble-text">
-        {parts.map((part, i) => {
-          if (part.match(urlRegex)) {
-            return (
-              <a key={i} href={part} target="_blank" rel="noreferrer">
-                {part}
-              </a>
-            );
-          }
-          return <span key={i}>{part}</span>;
-        })}
+        <FormattedText text={message.text} />
       </p>
     );
   };
